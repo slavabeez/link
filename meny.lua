@@ -180,27 +180,31 @@ end
 -- ====================== [2] ЭКРАН ЗАГРУЗКИ ======================
 -- worker(setStatus) -> вызывается асинхронно; setStatus меняет подпись
 local function showLoading(titleText, worker)
-    local w, h = 340, 190
+    local w, h = 330, 148
     local card = newCard(w, h)
 
-    local title = label(card, titleText or "ЗАГРУЗКА", 20, TXT, Enum.Font.GothamBold)
-    title.Size = UDim2.new(1, -32, 0, 30); title.Position = UDim2.new(0, 16, 0, 18)
+    local title = label(card, titleText or "ЗАГРУЗКА", 19, TXT, Enum.Font.GothamBold)
+    title.Size = UDim2.new(1, -32, 0, 28); title.Position = UDim2.new(0, 16, 0, 20)
     title.TextXAlignment = Enum.TextXAlignment.Center
     grad(title, ACCENT2, ACCENT1, 0)
 
-    local status = label(card, "Подключение", 14, SUB, Enum.Font.Gotham)
-    status.Size = UDim2.new(1, -32, 0, 22); status.Position = UDim2.new(0, 16, 0, 64)
+    local status = label(card, "Подключение", 13, SUB, Enum.Font.Gotham)
+    status.Size = UDim2.new(1, -32, 0, 20); status.Position = UDim2.new(0, 16, 0, 56)
     status.TextXAlignment = Enum.TextXAlignment.Center
 
     -- индикатор-полоса
     local track = Instance.new("Frame")
-    track.Size = UDim2.new(1, -48, 0, 8); track.Position = UDim2.new(0, 24, 0, 108)
+    track.Size = UDim2.new(1, -56, 0, 10); track.Position = UDim2.new(0, 28, 0, 90)
     track.BackgroundColor3 = Color3.fromRGB(45, 45, 60); track.BorderSizePixel = 0
-    track.ClipsDescendants = true; track.Parent = card; corner(track, 4)
+    track.ClipsDescendants = true; track.Parent = card; corner(track, 5)
     local seg = Instance.new("Frame")
     seg.Size = UDim2.new(0.4, 0, 1, 0); seg.Position = UDim2.new(-0.45, 0, 0, 0)
-    seg.BorderSizePixel = 0; seg.Parent = track; corner(seg, 4)
+    seg.BorderSizePixel = 0; seg.Parent = track; corner(seg, 5)
     grad(seg, ACCENT1, ACCENT2, 0)
+
+    local foot = label(card, "SCRIPT HUB", 11, Color3.fromRGB(95, 100, 130), Enum.Font.GothamBold)
+    foot.Size = UDim2.new(1, -32, 0, 16); foot.Position = UDim2.new(0, 16, 1, -26)
+    foot.TextXAlignment = Enum.TextXAlignment.Center
 
     -- бесконечная анимация полосы
     task.spawn(function()
