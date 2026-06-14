@@ -1,1 +1,1 @@
-https://idol-coast-compression-short.trycloudflare.com
+https://taken-forest-breakdown-pizza.trycloudflare.com
