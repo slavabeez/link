@@ -1,12 +1,3 @@
---[[============================================================================
-  meny.lua  —  ПУБЛИЧНОЕ меню-ключница (статичная ссылка для всех покупателей)
-    loadstring(game:HttpGet("https://raw.githubusercontent.com/slavabeez/link/main/meny.lua"))()
-
-  Экраны с плавными переходами:
-    [1] Ввод ключа  ->  [2] Анимированная загрузка  ->  [3] Меню TDS FARM
-  Кнопки грузят настоящий код С БОТА (приватный репо). user id проверяет сервер.
-============================================================================]]--
-
 local URL_FILE = "https://raw.githubusercontent.com/slavabeez/link/main/link.lua"
 local BUY_URL  = "https://funpay.com/users/6883431/"
 local KEYFILE  = "protecthub_key.txt"
@@ -18,7 +9,6 @@ local LP      = Players.LocalPlayer
 local userId  = tostring(LP and LP.UserId or 0)
 local placeId = tostring(game.PlaceId)
 
--- палитра (яркая, контрастная)
 local BG      = Color3.fromRGB(28, 28, 40)
 local CARD_A  = Color3.fromRGB(52, 50, 78)
 local CARD_B  = Color3.fromRGB(34, 33, 50)
@@ -29,7 +19,6 @@ local MONEY_C = Color3.fromRGB(55, 210, 130)
 local TXT     = Color3.fromRGB(245, 245, 252)
 local SUB     = Color3.fromRGB(175, 182, 210)
 
--- ---------- надёжный HTTP ----------
 local httpRequest = (syn and syn.request) or (http and http.request)
     or http_request or (fluxus and fluxus.request) or request
 local function trim(s) return (tostring(s or "")):gsub("^%s+", ""):gsub("%s+$", "") end
@@ -82,7 +71,6 @@ local function runScript(server, key, name)
     return pcall(fn)
 end
 
--- ---------- UI-хелперы ----------
 local parent = (gethui and gethui()) or game:GetService("CoreGui")
 pcall(function() if parent:FindFirstChild("ProtectHub") then parent.ProtectHub:Destroy() end end)
 local screen = Instance.new("ScreenGui")
@@ -109,13 +97,11 @@ local function label(parentObj, text, size, color, font)
 end
 local function center(w, h) return UDim2.new(0.5, -w / 2, 0.5, -h / 2) end
 
--- ховер-анимация кнопки (только цвет — без сдвига размера, чтобы ничего не «уезжало»)
 local function hoverify(btn, base, hov)
     btn.MouseEnter:Connect(function() Tween:Create(btn, TweenInfo.new(0.15), { BackgroundColor3 = hov }):Play() end)
     btn.MouseLeave:Connect(function() Tween:Create(btn, TweenInfo.new(0.15), { BackgroundColor3 = base }):Play() end)
 end
 
--- пульсация свечения рамки
 local function pulse(stroke)
     task.spawn(function()
         while stroke.Parent do
@@ -126,7 +112,6 @@ local function pulse(stroke)
     end)
 end
 
--- карточка (обычный Frame — всегда непрозрачная и яркая)
 local function newCard(w, h)
     local f = Instance.new("Frame")
     f.Size = UDim2.fromOffset(w, h); f.Position = center(w, h)
@@ -137,7 +122,6 @@ local function newCard(w, h)
     return f
 end
 
--- перетаскивание
 local function dragify(handle, card)
     local dragging, ds, sp
     handle.InputBegan:Connect(function(i)
@@ -156,7 +140,6 @@ local function dragify(handle, card)
     end)
 end
 
--- переход между экранами: старую убираем, новую плавно вдвигаем снизу
 local cur
 local function swap(card)
     if cur then cur:Destroy() end
@@ -172,8 +155,6 @@ local function closeAll()
     task.delay(0.22, function() screen:Destroy() end)
 end
 
--- ====================== [2] ЭКРАН ЗАГРУЗКИ ======================
--- worker(setStatus) -> вызывается асинхронно; setStatus меняет подпись
 local function showLoading(titleText, worker)
     local w, h = 330, 148
     local card = newCard(w, h)
@@ -201,7 +182,6 @@ local function showLoading(titleText, worker)
     foot.Size = UDim2.new(1, -32, 0, 16); foot.Position = UDim2.new(0, 16, 1, -26)
     foot.TextXAlignment = Enum.TextXAlignment.Center
 
-    -- бесконечная анимация полосы
     task.spawn(function()
         while track.Parent do
             seg.Position = UDim2.new(-0.45, 0, 0, 0)
@@ -212,7 +192,6 @@ local function showLoading(titleText, worker)
         end
     end)
 
-    -- анимация точек у статуса
     local statusText = "Подключение"
     task.spawn(function()
         local n = 0
@@ -227,7 +206,6 @@ local function showLoading(titleText, worker)
     task.spawn(function() worker(setStatus) end)
 end
 
--- ====================== [3] МЕНЮ TDS FARM ======================
 local function showFarm(server, key, errMsg)
     local w, h = 300, 210
     local card = newCard(w, h)
@@ -303,7 +281,6 @@ local function showFarm(server, key, errMsg)
     swap(card)
 end
 
--- ====================== [1] ВВОД КЛЮЧА ======================
 local function showGate(presetKey, autostart, errMsg)
     local w, h = 340, 250
     local card = newCard(w, h)
@@ -374,6 +351,5 @@ local function showGate(presetKey, autostart, errMsg)
     if autostart and presetKey and presetKey ~= "" then task.defer(activate) end
 end
 
--- старт: если есть сохранённый ключ — сразу проверяем
 local saved = loadKey()
 showGate(saved or "", saved ~= nil and saved ~= "", nil)
