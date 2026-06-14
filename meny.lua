@@ -18,16 +18,16 @@ local LP      = Players.LocalPlayer
 local userId  = tostring(LP and LP.UserId or 0)
 local placeId = tostring(game.PlaceId)
 
--- палитра
-local BG      = Color3.fromRGB(22, 22, 31)
-local CARD_A  = Color3.fromRGB(36, 34, 56)
-local CARD_B  = Color3.fromRGB(20, 20, 30)
-local ACCENT1 = Color3.fromRGB(130, 95, 255)
-local ACCENT2 = Color3.fromRGB(70, 200, 255)
-local GEMS_C  = Color3.fromRGB(150, 70, 235)
-local MONEY_C = Color3.fromRGB(45, 195, 110)
-local TXT     = Color3.fromRGB(238, 238, 248)
-local SUB     = Color3.fromRGB(155, 162, 190)
+-- палитра (яркая, контрастная)
+local BG      = Color3.fromRGB(28, 28, 40)
+local CARD_A  = Color3.fromRGB(52, 50, 78)
+local CARD_B  = Color3.fromRGB(34, 33, 50)
+local ACCENT1 = Color3.fromRGB(150, 115, 255)
+local ACCENT2 = Color3.fromRGB(95, 210, 255)
+local GEMS_C  = Color3.fromRGB(165, 90, 245)
+local MONEY_C = Color3.fromRGB(55, 210, 130)
+local TXT     = Color3.fromRGB(245, 245, 252)
+local SUB     = Color3.fromRGB(175, 182, 210)
 
 -- ---------- надёжный HTTP ----------
 local httpRequest = (syn and syn.request) or (http and http.request)
@@ -126,15 +126,15 @@ local function pulse(stroke)
     end)
 end
 
--- карточка (CanvasGroup -> можно плавно гасить целиком)
+-- карточка (обычный Frame — всегда непрозрачная и яркая)
 local function newCard(w, h)
-    local cg = Instance.new("CanvasGroup")
-    cg.Size = UDim2.fromOffset(w, h); cg.Position = center(w, h)
-    cg.BackgroundColor3 = CARD_B; cg.GroupTransparency = 1; cg.BorderSizePixel = 0; cg.Parent = screen
-    corner(cg, 16); grad(cg, CARD_A, CARD_B, 125)
-    local st = Instance.new("UIStroke"); st.Color = ACCENT1; st.Thickness = 1.6; st.Transparency = 0.4; st.Parent = cg
+    local f = Instance.new("Frame")
+    f.Size = UDim2.fromOffset(w, h); f.Position = center(w, h)
+    f.BackgroundColor3 = CARD_B; f.BorderSizePixel = 0; f.Parent = screen
+    corner(f, 16); grad(f, CARD_A, CARD_B, 125)
+    local st = Instance.new("UIStroke"); st.Color = ACCENT1; st.Thickness = 1.8; st.Transparency = 0.35; st.Parent = f
     pulse(st)
-    return cg
+    return f
 end
 
 -- перетаскивание
@@ -156,25 +156,20 @@ local function dragify(handle, card)
     end)
 end
 
--- переход: гасим старую карту, плавно показываем новую
+-- переход между экранами: старую убираем, новую плавно вдвигаем снизу
 local cur
 local function swap(card)
-    local old = cur; cur = card
+    if cur then cur:Destroy() end
+    cur = card
     local home = card.Position
-    card.Position = home + UDim2.fromOffset(0, 22)
-    Tween:Create(card, TweenInfo.new(0.32, Enum.EasingStyle.Quart, Enum.EasingDirection.Out),
-        { GroupTransparency = 0, Position = home }):Play()
-    if old then
-        Tween:Create(old, TweenInfo.new(0.22, Enum.EasingStyle.Quad),
-            { GroupTransparency = 1, Position = old.Position - UDim2.fromOffset(0, 22) }):Play()
-        task.delay(0.24, function() if old then old:Destroy() end end)
-    end
+    card.Position = home + UDim2.fromOffset(0, 30)
+    Tween:Create(card, TweenInfo.new(0.30, Enum.EasingStyle.Back, Enum.EasingDirection.Out),
+        { Position = home }):Play()
 end
 local function closeAll()
-    if cur then
-        Tween:Create(cur, TweenInfo.new(0.25), { GroupTransparency = 1, Position = cur.Position + UDim2.fromOffset(0, 22) }):Play()
-    end
-    task.delay(0.27, function() screen:Destroy() end)
+    if cur then Tween:Create(cur, TweenInfo.new(0.2, Enum.EasingStyle.Quad),
+        { Position = cur.Position + UDim2.fromOffset(0, 30) }):Play() end
+    task.delay(0.22, function() screen:Destroy() end)
 end
 
 -- ====================== [2] ЭКРАН ЗАГРУЗКИ ======================
@@ -267,8 +262,8 @@ local function showFarm(server, key, errMsg)
         hoverify(b, c1, c1:Lerp(Color3.new(1, 1, 1), 0.18))
         return b
     end
-    local gemsB  = farmBtn("💎   GEMS FARM",  62,  GEMS_C,  Color3.fromRGB(95, 45, 175))
-    local moneyB = farmBtn("💰   MONEY FARM", 120, MONEY_C, Color3.fromRGB(30, 150, 85))
+    local gemsB  = farmBtn("💎   GEMS FARM",  62,  GEMS_C,  Color3.fromRGB(130, 70, 215))
+    local moneyB = farmBtn("💰   MONEY FARM", 120, MONEY_C, Color3.fromRGB(42, 175, 108))
 
     local status = label(card, "Готово к работе  •  F1 / F2", 12, SUB, Enum.Font.Gotham)
     status.Size = UDim2.new(1, -32, 0, 18); status.Position = UDim2.new(0, 16, 1, -26)
