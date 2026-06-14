@@ -1,13 +1,3 @@
---[[============================================================================
-  meny.lua  —  ПУБЛИЧНОЕ меню-ключница (статичная ссылка для всех покупателей)
-    loadstring(game:HttpGet("https://raw.githubusercontent.com/slavabeez/link/main/meny.lua"))()
-
-  1) читает текущий адрес ПК из link/link.lua (его меняет бот);
-  2) спрашивает ключ, запоминает (writefile/readfile), проверяет на сервере (/check);
-  3) при верном ключе показывает меню TDS FARM с 2 кнопками (Gems / Money);
-  4) кнопки грузят настоящий код С БОТА (приватный репо). user id проверяет сервер.
-============================================================================]]--
-
 local URL_FILE = "https://raw.githubusercontent.com/slavabeez/link/main/link.lua"
 local BUY_URL  = "https://funpay.com/users/6883431/"
 local KEYFILE  = "protecthub_key.txt"
@@ -19,7 +9,6 @@ local LP      = Players.LocalPlayer
 local userId  = tostring(LP and LP.UserId or 0)
 local placeId = tostring(game.PlaceId)
 
--- ---------- надёжный HTTP (фолбэк на request экзекьютора + ретраи) ----------
 local httpRequest = (syn and syn.request) or (http and http.request)
     or http_request or (fluxus and fluxus.request) or request
 local function trim(s) return (tostring(s or "")):gsub("^%s+", ""):gsub("%s+$", "") end
@@ -64,7 +53,7 @@ local function checkKey(server, key)
     if st == "OK" then return true end
     return false, REASON[val] or "Доступ запрещён"
 end
--- грузит реальный скрипт С БОТА (приватный репо), user id уходит на сервер
+
 local function runScript(server, key, name)
     local code = httpGet(server .. "/get?script=" .. name .. "&key=" .. key .. "&user=" .. userId .. "&place=" .. placeId)
     if not code then return false end
@@ -93,7 +82,6 @@ local function dragify(handle, frame)
     end)
 end
 
--- =================== СТАРОЕ МЕНЮ TDS FARM (после ключа) ===================
 local function buildFarmMenu(server, key)
     pcall(function() if parent:FindFirstChild("TDSFarmMenu") then parent.TDSFarmMenu:Destroy() end end)
 
@@ -179,7 +167,6 @@ local function buildFarmMenu(server, key)
     Tween:Create(Frame, TweenInfo.new(0.5, Enum.EasingStyle.Back), { Position = UDim2.new(0.5, -125, 0.5, -80) }):Play()
 end
 
--- =================== ЭКРАН ВВОДА КЛЮЧА ===================
 pcall(function() if parent:FindFirstChild("ProtectHub") then parent.ProtectHub:Destroy() end end)
 local gui = Instance.new("ScreenGui")
 gui.Name = "ProtectHub"; gui.ResetOnSpawn = false; gui.ZIndexBehavior = Enum.ZIndexBehavior.Sibling; gui.Parent = parent
