@@ -1,1 +1,1 @@
-https://healing-concerned-birmingham-organize.trycloudflare.com
+https://api.trycloudflare.com
