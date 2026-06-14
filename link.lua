@@ -1,1 +1,1 @@
-https://api.trycloudflare.com
+https://idol-coast-compression-short.trycloudflare.com
