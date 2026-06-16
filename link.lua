@@ -1,1 +1,1 @@
-https://thought-dice-forbes-assists.trycloudflare.com
+https://buildings-spirits-shot-div.trycloudflare.com
