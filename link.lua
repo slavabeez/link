@@ -1,1 +1,1 @@
-https://alike-worker-formation-smith.trycloudflare.com
+https://thought-dice-forbes-assists.trycloudflare.com
