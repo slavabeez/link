@@ -1,1 +1,1 @@
-https://replacement-appraisal-roulette-played.trycloudflare.com
+https://consequently-medium-pipeline-stake.trycloudflare.com
