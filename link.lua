@@ -1,1 +1,1 @@
-https://consequently-medium-pipeline-stake.trycloudflare.com
+https://proposition-speed-resolution-diving.trycloudflare.com
