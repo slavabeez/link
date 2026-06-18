@@ -1,1 +1,1 @@
-https://transform-compile-prayers-costa.trycloudflare.com
+https://partnership-blonde-belts-spaces.trycloudflare.com
