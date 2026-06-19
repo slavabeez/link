@@ -1,1 +1,1 @@
-https://afterwards-keys-spiritual-formed.trycloudflare.com
+https://suit-coordinated-grand-continental.trycloudflare.com
