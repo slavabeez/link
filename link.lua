@@ -1,1 +1,1 @@
-https://sells-asked-upper-float.trycloudflare.com
+https://balloon-uploaded-battle-summaries.trycloudflare.com
