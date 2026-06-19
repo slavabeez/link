@@ -1,1 +1,1 @@
-https://first-inter-virginia-hayes.trycloudflare.com
+https://api.trycloudflare.com
