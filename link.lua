@@ -1,1 +1,1 @@
-https://catering-thumbs-certain-licensing.trycloudflare.com
+https://assessments-trial-envelope-mainly.trycloudflare.com
