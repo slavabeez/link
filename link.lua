@@ -1,1 +1,1 @@
-https://assessments-trial-envelope-mainly.trycloudflare.com
+https://mae-cosmetic-internet-registrar.trycloudflare.com
