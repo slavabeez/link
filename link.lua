@@ -1,1 +1,1 @@
-https://tales-surplus-system-photography.trycloudflare.com
+https://friend-laboratory-friendly-receives.trycloudflare.com
