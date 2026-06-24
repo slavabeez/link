@@ -1,1 +1,1 @@
-https://browser-military-barrel-joins.trycloudflare.com
+https://libs-elected-patients-ranking.trycloudflare.com
