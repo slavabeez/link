@@ -1,1 +1,1 @@
-https://friend-laboratory-friendly-receives.trycloudflare.com
+https://browser-military-barrel-joins.trycloudflare.com
