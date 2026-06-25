@@ -1,1 +1,1 @@
-https://diamonds-ver-disc-oils.trycloudflare.com
+https://time-tail-white-periodic.trycloudflare.com
