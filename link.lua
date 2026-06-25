@@ -1,1 +1,1 @@
-https://national-circuits-wyoming-gauge.trycloudflare.com
+https://priority-median-picked-genetic.trycloudflare.com
