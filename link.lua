@@ -1,1 +1,1 @@
-https://checked-path-warrior-experiment.trycloudflare.com
+https://high-dice-brown-albums.trycloudflare.com
