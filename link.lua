@@ -1,1 +1,1 @@
-https://situations-supervision-anthropology-driving.trycloudflare.com
+https://weed-consist-booth-lucky.trycloudflare.com
