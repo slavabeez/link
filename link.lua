@@ -1,1 +1,1 @@
-https://essential-losses-findlaw-diffs.trycloudflare.com
+https://api.trycloudflare.com
