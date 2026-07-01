@@ -1,1 +1,1 @@
-https://discrete-shift-greatly-scientist.trycloudflare.com
+https://alternative-atm-sympathy-concentration.trycloudflare.com
