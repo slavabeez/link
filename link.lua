@@ -1,1 +1,1 @@
-https://wiring-candidates-graduates-artist.trycloudflare.com
+https://productions-dollar-admit-too.trycloudflare.com
