@@ -1,1 +1,1 @@
-https://democratic-artist-regards-index.trycloudflare.com
+https://api.trycloudflare.com
