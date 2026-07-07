@@ -1,1 +1,1 @@
-https://solved-spirit-light-hit.trycloudflare.com
+https://link-europe-rehab-prompt.trycloudflare.com
