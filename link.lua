@@ -1,1 +1,1 @@
-https://ice-tropical-convicted-same.trycloudflare.com
+https://solved-spirit-light-hit.trycloudflare.com
