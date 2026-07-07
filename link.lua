@@ -1,1 +1,1 @@
-https://link-europe-rehab-prompt.trycloudflare.com
+https://oriental-effect-considerable-they.trycloudflare.com
