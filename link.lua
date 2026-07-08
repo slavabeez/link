@@ -1,1 +1,1 @@
-https://model-acquisition-device-midlands.trycloudflare.com
+https://arise-card-cluster-tears.trycloudflare.com
