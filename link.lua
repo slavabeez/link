@@ -1,1 +1,1 @@
-https://rocky-gale-manuals-battle.trycloudflare.com
+https://bachelor-chan-conducted-excluded.trycloudflare.com
