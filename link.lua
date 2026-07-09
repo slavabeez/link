@@ -1,1 +1,1 @@
-https://longitude-accuracy-barrier-continuously.trycloudflare.com
+https://excluding-lyric-informational-infrastructure.trycloudflare.com
