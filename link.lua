@@ -1,1 +1,1 @@
-https://arise-card-cluster-tears.trycloudflare.com
+https://again-steven-figured-searching.trycloudflare.com
