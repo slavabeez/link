@@ -1,1 +1,1 @@
-https://insured-vhs-sign-incidents.trycloudflare.com
+https://phones-medications-canal-guidelines.trycloudflare.com
