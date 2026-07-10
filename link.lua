@@ -1,1 +1,1 @@
-https://retained-anti-bbs-yale.trycloudflare.com
+https://speed-hose-ins-months.trycloudflare.com
