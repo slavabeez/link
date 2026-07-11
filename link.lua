@@ -1,1 +1,1 @@
-https://maker-tourist-executed-raised.trycloudflare.com
+https://score-towers-wake-premier.trycloudflare.com
