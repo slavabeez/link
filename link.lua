@@ -1,1 +1,1 @@
-https://sought-zone-blog-aware.trycloudflare.com
+https://updates-hebrew-temperatures-candles.trycloudflare.com
