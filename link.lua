@@ -1,1 +1,1 @@
-https://updates-hebrew-temperatures-candles.trycloudflare.com
+https://short-maintenance-pan-organization.trycloudflare.com
