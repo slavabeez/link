@@ -1,1 +1,1 @@
-https://short-maintenance-pan-organization.trycloudflare.com
+https://more-attractive-whilst-short.trycloudflare.com
