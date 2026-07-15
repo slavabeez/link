@@ -1,1 +1,1 @@
-https://fun-rogers-musical-enters.trycloudflare.com
+https://platinum-seasonal-screenshot-horizon.trycloudflare.com
