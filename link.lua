@@ -1,1 +1,1 @@
-https://opens-cards-cut-commission.trycloudflare.com
+https://dancing-remember-planner-indication.trycloudflare.com
