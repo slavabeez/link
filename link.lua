@@ -1,1 +1,1 @@
-https://start-peers-crucial-vermont.trycloudflare.com
+https://opens-cards-cut-commission.trycloudflare.com
