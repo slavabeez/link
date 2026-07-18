@@ -1,1 +1,1 @@
-https://permissions-dock-cruz-coverage.trycloudflare.com
+https://victory-segments-html-pending.trycloudflare.com
