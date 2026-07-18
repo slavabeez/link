@@ -1,1 +1,1 @@
-https://prominent-boot-cho-avi.trycloudflare.com
+https://russia-aqua-school-oakland.trycloudflare.com
