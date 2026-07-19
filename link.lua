@@ -1,1 +1,1 @@
-https://cooperation-plug-exercises-orleans.trycloudflare.com
+https://land-tokyo-ships-garlic.trycloudflare.com
