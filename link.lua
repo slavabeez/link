@@ -1,1 +1,1 @@
-https://russia-aqua-school-oakland.trycloudflare.com
+https://ten-worm-offshore-carolina.trycloudflare.com
