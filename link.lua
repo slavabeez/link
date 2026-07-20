@@ -1,1 +1,1 @@
-https://hospitality-adopt-butler-releases.trycloudflare.com
+https://gadgets-passed-rico-sheets.trycloudflare.com
