@@ -1,1 +1,1 @@
-https://origin-needle-extract-hosting.trycloudflare.com
+https://console-queens-personality-builders.trycloudflare.com
