@@ -1,1 +1,1 @@
-https://quad-handled-cut-called.trycloudflare.com
+https://flame-throwing-divorce-editions.trycloudflare.com
