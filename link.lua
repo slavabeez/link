@@ -1,1 +1,1 @@
-https://once-forwarding-near-joel.trycloudflare.com
+https://pointed-ages-boulevard-northeast.trycloudflare.com
