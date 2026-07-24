@@ -1,1 +1,1 @@
-https://aware-definitely-proof-comics.trycloudflare.com
+https://exempt-smart-rangers-solved.trycloudflare.com
