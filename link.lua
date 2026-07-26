@@ -1,1 +1,1 @@
-https://ment-ace-human-beast.trycloudflare.com
+https://compromise-derived-naval-vip.trycloudflare.com
