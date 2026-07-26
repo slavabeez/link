@@ -1,1 +1,1 @@
-https://silver-ladder-project-jazz.trycloudflare.com
+https://genetics-everything-visual-tablet.trycloudflare.com
