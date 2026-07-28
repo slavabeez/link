@@ -1,1 +1,1 @@
-https://switching-pole-cruz-calculations.trycloudflare.com
+https://thou-island-revision-granted.trycloudflare.com
