@@ -1,1 +1,1 @@
-https://lot-wellness-treasure-stan.trycloudflare.com
+https://pitch-decide-percentage-recorded.trycloudflare.com
