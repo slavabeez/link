@@ -1,1 +1,1 @@
-https://mistakes-rows-strain-transmit.trycloudflare.com
+https://lot-wellness-treasure-stan.trycloudflare.com
