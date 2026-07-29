@@ -1,1 +1,1 @@
-https://relate-equivalent-captain-librarian.trycloudflare.com
+https://galleries-nickname-then-lottery.trycloudflare.com
