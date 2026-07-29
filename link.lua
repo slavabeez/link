@@ -1,1 +1,1 @@
-https://monkey-against-stuck-qualification.trycloudflare.com
+https://mesa-brad-scheduling-sacrifice.trycloudflare.com
