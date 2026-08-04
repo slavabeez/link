@@ -1,1 +1,1 @@
-https://integrated-scanners-travelling-casual.trycloudflare.com
+https://seek-civilization-instructions-yearly.trycloudflare.com
