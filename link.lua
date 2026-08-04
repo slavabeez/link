@@ -1,1 +1,1 @@
-https://chelsea-wine-released-mambo.trycloudflare.com
+https://liquid-oak-font-adopted.trycloudflare.com
