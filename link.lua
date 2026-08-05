@@ -1,1 +1,1 @@
-https://ext-beer-deposits-apache.trycloudflare.com
+https://sub-phrase-walker-encourages.trycloudflare.com
