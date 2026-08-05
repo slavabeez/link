@@ -1,1 +1,1 @@
-https://realized-humanities-compute-sight.trycloudflare.com
+https://job-stops-still-digit.trycloudflare.com
