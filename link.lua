@@ -1,1 +1,1 @@
-https://beaches-confidential-participants-phys.trycloudflare.com
+https://ext-beer-deposits-apache.trycloudflare.com
