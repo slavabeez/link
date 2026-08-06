@@ -1,1 +1,1 @@
-https://squad-worcester-bless-cup.trycloudflare.com
+https://diana-especially-amy-processed.trycloudflare.com
