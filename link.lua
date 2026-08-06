@@ -1,1 +1,1 @@
-https://excerpt-titles-buffalo-twins.trycloudflare.com
+https://squad-worcester-bless-cup.trycloudflare.com
