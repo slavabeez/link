@@ -1,1 +1,1 @@
-https://sampling-clarke-proper-inputs.trycloudflare.com
+https://activated-echo-football-pdas.trycloudflare.com
