@@ -1,1 +1,1 @@
-https://david-currencies-brothers-nato.trycloudflare.com
+https://convicted-environment-strong-jim.trycloudflare.com
