@@ -328,7 +328,7 @@ end
 
 -- ====================== [4] НАСТРОЙКИ БАШЕН ======================
 local function showSettings(server, key)
-    local w, h = 360, 400
+    local w, h = 380, 460
     local card = newCard(w, h)
 
     -- шапка
@@ -353,15 +353,19 @@ local function showSettings(server, key)
     info.Size = UDim2.new(1, -32, 0, 34); info.Position = UDim2.new(0, 16, 0, 52)
     info.TextWrapped = true; info.TextYAlignment = Enum.TextYAlignment.Top
 
-    -- список
+    -- сетка карточек (как в игре): 3 в ряд, картинка сверху, название снизу
     local list = Instance.new("ScrollingFrame")
-    list.Size = UDim2.new(1, -32, 0, 212); list.Position = UDim2.new(0, 16, 0, 92)
+    list.Size = UDim2.new(1, -32, 0, 268); list.Position = UDim2.new(0, 16, 0, 92)
     list.BackgroundColor3 = Color3.fromRGB(26, 25, 38); list.BackgroundTransparency = 0.25
     list.BorderSizePixel = 0; list.ScrollBarThickness = 4; list.ScrollBarImageColor3 = ACCENT1
     list.CanvasSize = UDim2.new(0, 0, 0, 0); list.AutomaticCanvasSize = Enum.AutomaticSize.Y
     list.Parent = card; corner(list, 10)
-    local lay = Instance.new("UIListLayout", list); lay.Padding = UDim.new(0, 4); lay.SortOrder = Enum.SortOrder.LayoutOrder
-    local lpad = Instance.new("UIPadding", list); lpad.PaddingTop = UDim.new(0, 6); lpad.PaddingLeft = UDim.new(0, 6); lpad.PaddingRight = UDim.new(0, 6)
+    local lpad = Instance.new("UIPadding", list)
+    lpad.PaddingTop = UDim.new(0, 8); lpad.PaddingBottom = UDim.new(0, 8)
+    lpad.PaddingLeft = UDim.new(0, 8); lpad.PaddingRight = UDim.new(0, 8)
+    local grid = Instance.new("UIGridLayout", list)
+    grid.CellSize = UDim2.fromOffset(104, 116); grid.CellPadding = UDim2.fromOffset(8, 8)
+    grid.SortOrder = Enum.SortOrder.LayoutOrder; grid.HorizontalAlignment = Enum.HorizontalAlignment.Left
 
     local function bigBtn(text, y, col, wide)
         local b = Instance.new("TextButton")
@@ -376,10 +380,10 @@ local function showSettings(server, key)
     local selected = loadTowers()
     local function isSel(n) for _, v in ipairs(selected) do if v == n then return true end end return false end
 
-    local saveB = bigBtn("СОХРАНИТЬ", 316, MONEY_C)
+    local saveB = bigBtn("СОХРАНИТЬ", 372, MONEY_C)
     saveB.Size = UDim2.new(0.5, -20, 0, 40)
-    local rescanB = bigBtn("ОБНОВИТЬ", 316, Color3.fromRGB(70, 65, 100))
-    rescanB.Position = UDim2.new(0.5, 4, 0, 316); rescanB.Size = UDim2.new(0.5, -20, 0, 40)
+    local rescanB = bigBtn("ОБНОВИТЬ", 372, Color3.fromRGB(70, 65, 100))
+    rescanB.Position = UDim2.new(0.5, 4, 0, 372); rescanB.Size = UDim2.new(0.5, -20, 0, 40)
 
     local hint = label(card, "", 11, SUB, Enum.Font.Gotham)
     hint.Size = UDim2.new(1, -32, 0, 16); hint.Position = UDim2.new(0, 16, 1, -22)
@@ -395,13 +399,15 @@ local function showSettings(server, key)
 
     local function showError(reason)
         for _, ch in ipairs(list:GetChildren()) do if ch:IsA("GuiObject") then ch:Destroy() end end
+        grid.Enabled = false   -- на экране ошибки сетка не нужна
         info.Text = "Не удалось получить список башен"; info.TextColor3 = ERR_C
 
         local why = label(list, "Причина:\n" .. tostring(reason), 13, WARN_C, Enum.Font.Gotham)
-        why.Size = UDim2.new(1, -12, 0, 96); why.TextWrapped = true
-        why.TextYAlignment = Enum.TextYAlignment.Top
+        why.Size = UDim2.new(1, -12, 0, 110); why.Position = UDim2.new(0, 4, 0, 4)
+        why.TextWrapped = true; why.TextYAlignment = Enum.TextYAlignment.Top
 
         local rj = Instance.new("TextButton")
+        rj.Position = UDim2.new(0, 4, 0, 122)
         rj.Size = UDim2.new(1, -12, 0, 44); rj.BackgroundColor3 = Color3.fromRGB(235, 105, 80)
         rj.Text = "ПЕРЕЗАЙТИ В ИГРУ"; rj.TextColor3 = Color3.new(1, 1, 1)
         rj.Font = Enum.Font.GothamBold; rj.TextSize = 15; rj.BorderSizePixel = 0; rj.AutoButtonColor = false
@@ -420,29 +426,65 @@ local function showSettings(server, key)
         local towers, err = scanTowers()
         if not towers then return showError(err) end
 
+        grid.Enabled = true   -- вернуть сетку после экрана ошибки
         refreshInfo()
         hint.Text = "Доступно башен: " .. #towers .. "  •  максимум " .. MAX_PICK
         for i, t in ipairs(towers) do
             local name = t.name
-            local row = Instance.new("TextButton")
-            row.Size = UDim2.new(1, -12, 0, 42); row.LayoutOrder = i
-            row.BackgroundColor3 = isSel(name) and Color3.fromRGB(46, 120, 82) or Color3.fromRGB(44, 42, 62)
-            row.Text = (isSel(name) and "[X]  " or "[  ]  ") .. name
-            row.TextColor3 = TXT; row.Font = Enum.Font.Gotham; row.TextSize = 14
-            row.TextXAlignment = Enum.TextXAlignment.Left; row.BorderSizePixel = 0; row.AutoButtonColor = false
-            row.Parent = list; corner(row, 7)
-            local rp = Instance.new("UIPadding", row); rp.PaddingLeft = UDim.new(0, 48)
 
-            -- иконка башни из инвентаря (…scrolling.<Башня>.main)
-            if t.icon then
-                local ic = Instance.new("ImageLabel")
-                ic.Size = UDim2.fromOffset(32, 32); ic.Position = UDim2.fromOffset(7, 5)
-                ic.BackgroundColor3 = Color3.fromRGB(28, 27, 40); ic.BackgroundTransparency = 0.35
-                ic.Image = t.icon; ic.ScaleType = Enum.ScaleType.Fit; ic.ZIndex = 2
-                ic.Parent = row; corner(ic, 6)
+            -- карточка башни
+            local cell = Instance.new("TextButton")
+            cell.Size = UDim2.fromOffset(104, 116); cell.LayoutOrder = i
+            cell.BackgroundColor3 = Color3.fromRGB(38, 37, 52)
+            cell.Text = ""; cell.BorderSizePixel = 0; cell.AutoButtonColor = false
+            cell.ClipsDescendants = true; cell.Parent = list
+            corner(cell, 9)
+            local st = Instance.new("UIStroke", cell)
+            st.Thickness = 1.5; st.Color = Color3.fromRGB(72, 70, 98); st.Transparency = 0.15
+
+            -- картинка башни (…scrolling.<Башня>.main)
+            local ic = Instance.new("ImageLabel")
+            ic.Size = UDim2.new(1, -10, 0, 78); ic.Position = UDim2.fromOffset(5, 5)
+            ic.BackgroundColor3 = Color3.fromRGB(26, 25, 38); ic.BackgroundTransparency = 0.25
+            ic.Image = t.icon or ""; ic.ScaleType = Enum.ScaleType.Fit
+            ic.Parent = cell; corner(ic, 7)
+
+            -- название снизу
+            local nm = Instance.new("TextLabel")
+            nm.BackgroundTransparency = 1
+            nm.Size = UDim2.new(1, -8, 0, 24); nm.Position = UDim2.new(0, 4, 1, -27)
+            nm.Text = name; nm.Font = Enum.Font.GothamBold; nm.TextSize = 12
+            nm.TextColor3 = TXT; nm.TextTruncate = Enum.TextTruncate.AtEnd
+            nm.TextXAlignment = Enum.TextXAlignment.Center; nm.Parent = cell
+
+            local glowTween
+            local function paint()
+                local on = isSel(name)
+                if glowTween then glowTween:Cancel(); glowTween = nil end
+                if on then
+                    cell.BackgroundColor3 = Color3.fromRGB(58, 52, 28)
+                    st.Color = Color3.fromRGB(255, 208, 45); st.Thickness = 3; st.Transparency = 0
+                    nm.TextColor3 = Color3.fromRGB(255, 224, 120)
+                    -- мягкое свечение рамки
+                    glowTween = Tween:Create(st, TweenInfo.new(0.85, Enum.EasingStyle.Sine, Enum.EasingDirection.InOut, -1, true),
+                        { Transparency = 0.45 })
+                    glowTween:Play()
+                else
+                    cell.BackgroundColor3 = Color3.fromRGB(38, 37, 52)
+                    st.Color = Color3.fromRGB(72, 70, 98); st.Thickness = 1.5; st.Transparency = 0.15
+                    nm.TextColor3 = TXT
+                end
             end
+            paint()
 
-            row.MouseButton1Click:Connect(function()
+            cell.MouseEnter:Connect(function()
+                if not isSel(name) then Tween:Create(st, TweenInfo.new(0.15), { Color = ACCENT1, Transparency = 0 }):Play() end
+            end)
+            cell.MouseLeave:Connect(function()
+                if not isSel(name) then Tween:Create(st, TweenInfo.new(0.15), { Color = Color3.fromRGB(72, 70, 98), Transparency = 0.15 }):Play() end
+            end)
+
+            cell.MouseButton1Click:Connect(function()
                 if isSel(name) then
                     for idx, v in ipairs(selected) do if v == name then table.remove(selected, idx) break end end
                 elseif #selected >= MAX_PICK then
@@ -453,8 +495,7 @@ local function showSettings(server, key)
                     table.insert(selected, name)
                 end
                 hint.TextColor3 = SUB
-                row.BackgroundColor3 = isSel(name) and Color3.fromRGB(46, 120, 82) or Color3.fromRGB(44, 42, 62)
-                row.Text = (isSel(name) and "[X]  " or "[  ]  ") .. name
+                paint()
                 refreshInfo()
             end)
         end
