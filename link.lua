@@ -1,1 +1,1 @@
-https://bars-prospects-cold-bicycle.trycloudflare.com
+https://household-doc-resolve-usually.trycloudflare.com
