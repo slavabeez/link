@@ -418,15 +418,15 @@ showSettings = function(server, key)
         end
         local function showError(reason)
             clearList()
-            grid.Enabled = false
             info.Text = "Список башен не получен"; info.TextColor3 = ERR_C
 
+            -- элементы просто становятся в поток UIListLayout
             local why = label(list, "Причина:\n" .. tostring(reason), 13, WARN_C, Enum.Font.Gotham)
-            why.Size = UDim2.new(1, -12, 0, 120); why.Position = UDim2.fromOffset(4, 4)
+            why.Size = UDim2.new(1, -12, 0, 120); why.LayoutOrder = 1
             why.TextWrapped = true; why.TextYAlignment = Enum.TextYAlignment.Top
 
             local rj = Instance.new("TextButton")
-            rj.Position = UDim2.fromOffset(4, 132); rj.Size = UDim2.new(1, -12, 0, 46)
+            rj.LayoutOrder = 2; rj.Size = UDim2.new(1, -12, 0, 46)
             rj.BackgroundColor3 = Color3.fromRGB(235, 105, 80); rj.Text = "ПЕРЕЗАЙТИ В ИГРУ"
             rj.TextColor3 = Color3.new(1, 1, 1); rj.Font = Enum.Font.GothamBold; rj.TextSize = 15
             rj.BorderSizePixel = 0; rj.AutoButtonColor = false; rj.Parent = list
@@ -444,7 +444,6 @@ showSettings = function(server, key)
             if not towers then return showError(err) end
 
             clearList()
-            grid.Enabled = true
             refreshInfo()
             hint.Text = (showAll and "Показаны ВСЕ: " or "Доступно: ") .. #towers .. "  •  максимум " .. MAX_PICK
 
@@ -537,7 +536,15 @@ showSettings = function(server, key)
         refreshInfo()
         -- строим СРАЗУ, синхронно — без отложенных вызовов
         local ok, e = pcall(build)
-        if not ok then pcall(showError, "Ошибка: " .. tostring(e)) end
+        if not ok then
+            local shown = pcall(showError, "Ошибка: " .. tostring(e))
+            if not shown then
+                -- последняя страховка: пишем прямо на страницу, мимо списка
+                local hard = label(page, "Ошибка меню:\n" .. tostring(e), 13, ERR_C, Enum.Font.Gotham)
+                hard.Size = UDim2.new(1, -32, 0, 260); hard.Position = UDim2.new(0, 16, 0, 96)
+                hard.TextWrapped = true; hard.TextYAlignment = Enum.TextYAlignment.Top; hard.ZIndex = 5
+            end
+        end
     end)
 end
 
