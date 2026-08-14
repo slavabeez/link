@@ -1,5 +1,5 @@
-local URL_FILE  = "https://raw.githubusercontent.com/slavabeez/link/main/link.lua"
-local BUY_URL   = "https://funpay.com/users/6883431/"
+local URL_FILE = "https://raw.githubusercontent.com/slavabeez/link/main/link.lua"
+local BUY_URL  = "https://funpay.com/users/6883431/"
 local KEYFILE   = "protecthub_key.txt"
 local TOWERFILE = "protecthub_towers.txt"   -- выбранные башни (читает money.lua)
 local MAX_PICK  = 4
@@ -84,7 +84,25 @@ local function isHidden(o)
     return ok and res or false
 end
 
--- возвращает: список башен  ИЛИ  nil, причина
+-- иконка башни: ищем картинку внутри main (…towerContainer["4scrolling"].Hacker.main)
+local function findIcon(main)
+    local best
+    pcall(function()
+        for _, d in ipairs(main:GetDescendants()) do
+            if (d:IsA("ImageLabel") or d:IsA("ImageButton")) and d.Image and d.Image ~= "" then
+                local n = tostring(d.Name):lower()
+                if n:find("icon") or n:find("image") or n:find("tower") or n:find("thumb") then
+                    best = d.Image
+                    return
+                end
+                best = best or d.Image
+            end
+        end
+    end)
+    return best
+end
+
+-- возвращает: список {name=, icon=}  ИЛИ  nil, причина
 local function scanTowers()
     local pg = LP:FindFirstChild("PlayerGui")
     if not pg then return nil, "PlayerGui не найден" end
@@ -103,15 +121,14 @@ local function scanTowers()
         if tostring(sc.Name):lower():find("scrolling") then
             scrolls = scrolls + 1
             for _, tw in ipairs(sc:GetChildren()) do
-                local ok = pcall(function()
+                pcall(function()
                     local main = tw:FindFirstChild("main")
                     local top = main and main:FindFirstChild("topThing")
                     if top and isHidden(top) and not seen[tw.Name] then
                         seen[tw.Name] = true
-                        table.insert(found, tw.Name)
+                        table.insert(found, { name = tw.Name, icon = findIcon(main) })
                     end
                 end)
-                if not ok then end
             end
         end
     end
@@ -122,7 +139,7 @@ local function scanTowers()
     if #found == 0 then
         return nil, "Просмотрено вкладок: " .. scrolls .. ", доступных башен не найдено\n(у всех topThing видим). Попробуй перезайти."
     end
-    table.sort(found)
+    table.sort(found, function(a, b) return a.name < b.name end)
     return found
 end
 
@@ -398,15 +415,25 @@ local function showSettings(server, key)
 
         refreshInfo()
         hint.Text = "Доступно башен: " .. #towers .. "  •  максимум " .. MAX_PICK
-        for i, name in ipairs(towers) do
+        for i, t in ipairs(towers) do
+            local name = t.name
             local row = Instance.new("TextButton")
-            row.Size = UDim2.new(1, -12, 0, 34); row.LayoutOrder = i
+            row.Size = UDim2.new(1, -12, 0, 42); row.LayoutOrder = i
             row.BackgroundColor3 = isSel(name) and Color3.fromRGB(46, 120, 82) or Color3.fromRGB(44, 42, 62)
             row.Text = (isSel(name) and "[X]  " or "[  ]  ") .. name
             row.TextColor3 = TXT; row.Font = Enum.Font.Gotham; row.TextSize = 14
             row.TextXAlignment = Enum.TextXAlignment.Left; row.BorderSizePixel = 0; row.AutoButtonColor = false
             row.Parent = list; corner(row, 7)
-            local rp = Instance.new("UIPadding", row); rp.PaddingLeft = UDim.new(0, 10)
+            local rp = Instance.new("UIPadding", row); rp.PaddingLeft = UDim.new(0, 48)
+
+            -- иконка башни из инвентаря (…scrolling.<Башня>.main)
+            if t.icon then
+                local ic = Instance.new("ImageLabel")
+                ic.Size = UDim2.fromOffset(32, 32); ic.Position = UDim2.fromOffset(7, 5)
+                ic.BackgroundColor3 = Color3.fromRGB(28, 27, 40); ic.BackgroundTransparency = 0.35
+                ic.Image = t.icon; ic.ScaleType = Enum.ScaleType.Fit; ic.ZIndex = 2
+                ic.Parent = row; corner(ic, 6)
+            end
 
             row.MouseButton1Click:Connect(function()
                 if isSel(name) then
