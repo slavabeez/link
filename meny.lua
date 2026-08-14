@@ -51,25 +51,32 @@ end
 local function clearKey() if hasFiles and isfile(KEYFILE) then pcall(delfile, KEYFILE) end end
 
 -- ---------- выбранные башни ----------
+-- список выбранных всегда без повторов: одна башня — одно место
+local function uniq(src)
+    local out, seen = {}, {}
+    for _, v in ipairs(src or {}) do
+        if type(v) == "string" and v ~= "" and not seen[v] then seen[v] = true; table.insert(out, v) end
+    end
+    while #out > MAX_PICK do table.remove(out) end
+    return out
+end
 local function loadTowers()
     local out = {}
     pcall(function()
         local g = (getgenv and getgenv()) or _G
-        if type(g.TDSTowers) == "table" then
-            for _, v in ipairs(g.TDSTowers) do if type(v) == "string" and v ~= "" then table.insert(out, v) end end
-        end
+        if type(g.TDSTowers) == "table" then out = uniq(g.TDSTowers) end
         if #out == 0 and hasFiles and isfile(TOWERFILE) then
             local d = HttpSvc:JSONDecode(readfile(TOWERFILE))
-            if type(d) == "table" then
-                for _, v in ipairs(d) do if type(v) == "string" and v ~= "" then table.insert(out, v) end end
-            end
+            if type(d) == "table" then out = uniq(d) end
         end
     end)
     return out
 end
 local function saveTowers(list)
-    pcall(function() local g = (getgenv and getgenv()) or _G; g.TDSTowers = list end)
-    if hasFiles then pcall(function() writefile(TOWERFILE, HttpSvc:JSONEncode(list)) end) end
+    local clean = uniq(list)
+    pcall(function() local g = (getgenv and getgenv()) or _G; g.TDSTowers = clean end)
+    if hasFiles then pcall(function() writefile(TOWERFILE, HttpSvc:JSONEncode(clean)) end) end
+    return clean
 end
 
 -- ---------- сканирование башен в инвентаре ----------
