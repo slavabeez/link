@@ -238,7 +238,9 @@ local function pulse(stroke)
 end
 local function newCard(w, h)
     local f = Instance.new("Frame")
-    f.Size = UDim2.fromOffset(w, h); f.Position = center(w, h)
+    -- якорь по центру: так карточку можно плавно масштабировать при переходах
+    f.AnchorPoint = Vector2.new(0.5, 0.5)
+    f.Size = UDim2.fromOffset(w, h); f.Position = UDim2.fromScale(0.5, 0.5)
     f.BackgroundColor3 = CARD_B; f.BorderSizePixel = 0; f.Parent = screen
     corner(f, 16); grad(f, CARD_A, CARD_B, 125)
     local st = Instance.new("UIStroke"); st.Color = ACCENT1; st.Thickness = 1.8; st.Transparency = 0.35; st.Parent = f
@@ -275,17 +277,41 @@ local function iconBtn(parentObj, text, xOffset, bg, hov, fg)
 end
 
 local cur
-local function swap(card)
-    if cur then cur:Destroy() end
+local IN_INFO  = TweenInfo.new(0.36, Enum.EasingStyle.Quint, Enum.EasingDirection.Out)
+local OUT_INFO = TweenInfo.new(0.22, Enum.EasingStyle.Quad, Enum.EasingDirection.In)
+local function shrunk(sz, k)
+    return UDim2.fromOffset(math.floor(sz.X.Offset * k), math.floor(sz.Y.Offset * k))
+end
+
+-- dir: 1 — вперёд (новый экран въезжает справа), -1 — назад (слева)
+local function swap(card, dir)
+    dir = dir or 1
+    local old = cur
     cur = card
-    local home = card.Position
-    card.Position = home + UDim2.fromOffset(0, 30)
-    Tween:Create(card, TweenInfo.new(0.30, Enum.EasingStyle.Back, Enum.EasingDirection.Out), { Position = home }):Play()
+
+    local home, size = card.Position, card.Size
+    card.Position = home + UDim2.fromOffset(dir * 80, 0)
+    card.Size = shrunk(size, 0.92)
+    Tween:Create(card, IN_INFO, { Position = home, Size = size }):Play()
+
+    if old then
+        Tween:Create(old, OUT_INFO, {
+            Position = old.Position - UDim2.fromOffset(dir * 80, 0),
+            Size = shrunk(old.Size, 0.92),
+        }):Play()
+        task.delay(0.24, function() if old then old:Destroy() end end)
+    end
 end
 local function closeAll()
-    if cur then Tween:Create(cur, TweenInfo.new(0.2, Enum.EasingStyle.Quad),
-        { Position = cur.Position + UDim2.fromOffset(0, 30) }):Play() end
-    task.delay(0.22, function() screen:Destroy() end)
+    local c = cur
+    cur = nil
+    if c then
+        Tween:Create(c, TweenInfo.new(0.24, Enum.EasingStyle.Back, Enum.EasingDirection.In), {
+            Position = c.Position + UDim2.fromOffset(0, 60),
+            Size = shrunk(c.Size, 0.85),
+        }):Play()
+    end
+    task.delay(0.26, function() screen:Destroy() end)
 end
 
 local showFarm  -- forward
@@ -360,7 +386,7 @@ local function showSettings(server, key)
 
     iconBtn(bar, "X", -36, Color3.fromRGB(225, 70, 80), Color3.fromRGB(245, 95, 105)).MouseButton1Click:Connect(closeAll)
     iconBtn(bar, "<", -70, Color3.fromRGB(70, 65, 100), Color3.fromRGB(95, 88, 130)).MouseButton1Click:Connect(function()
-        showFarm(server, key)
+        showFarm(server, key, nil, -1)   -- назад: экран уезжает вправо
     end)
     dragify(bar, card)
 
@@ -496,7 +522,16 @@ local function showSettings(server, key)
                     nm.TextColor3 = TXT
                 end
             end
-            paint()
+            -- каскадное появление: карточки проявляются одна за другой
+            cell.BackgroundTransparency = 1; st.Transparency = 1
+            ic.ImageTransparency = 1; ic.BackgroundTransparency = 1; nm.TextTransparency = 1
+            task.delay(0.02 * i, function()
+                if not cell.Parent then return end
+                Tween:Create(cell, TweenInfo.new(0.22), { BackgroundTransparency = 0 }):Play()
+                Tween:Create(ic, TweenInfo.new(0.22), { ImageTransparency = 0, BackgroundTransparency = 0.25 }):Play()
+                Tween:Create(nm, TweenInfo.new(0.22), { TextTransparency = 0 }):Play()
+                paint()
+            end)
 
             cell.MouseEnter:Connect(function()
                 if not isSel(name) then Tween:Create(st, TweenInfo.new(0.15), { Color = ACCENT1, Transparency = 0 }):Play() end
@@ -556,7 +591,7 @@ local function showSettings(server, key)
 end
 
 -- ====================== [3] МЕНЮ TDS FARM ======================
-showFarm = function(server, key, errMsg)
+showFarm = function(server, key, errMsg, dir)
     local w, h = 300, 210
     local card = newCard(w, h)
 
@@ -630,7 +665,7 @@ showFarm = function(server, key, errMsg)
         elseif input.KeyCode == Enum.KeyCode.F2 then runFarm("money") end
     end)
 
-    swap(card)
+    swap(card, dir or 1)
 end
 
 -- ====================== [1] ВВОД КЛЮЧА ======================
