@@ -1,14 +1,5 @@
---[[============================================================================
-  meny.lua  —  ПУБЛИЧНОЕ меню-ключница (статичная ссылка для всех покупателей)
-    loadstring(game:HttpGet("https://raw.githubusercontent.com/slavabeez/link/main/meny.lua"))()
-
-  Экраны:
-    [1] Ввод ключа -> [2] Загрузка -> [3] Меню TDS FARM -> [4] Настройки башен
-  Кнопки грузят настоящий код С БОТА (приватный репо). user id проверяет сервер.
-============================================================================]]--
-
-local URL_FILE = "https://raw.githubusercontent.com/slavabeez/link/main/link.lua"
-local BUY_URL  = "https://funpay.com/users/6883431/"
+local URL_FILE  = "https://raw.githubusercontent.com/slavabeez/link/main/link.lua"
+local BUY_URL   = "https://funpay.com/users/6883431/"
 local KEYFILE   = "protecthub_key.txt"
 local TOWERFILE = "protecthub_towers.txt"   -- выбранные башни (читает money.lua)
 local MAX_PICK  = 4
