@@ -1,1 +1,1 @@
-https://household-doc-resolve-usually.trycloudflare.com
+https://wake-webcast-ranked-all.trycloudflare.com
