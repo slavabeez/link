@@ -91,11 +91,11 @@ local function isHidden(o)
     return ok and res or false
 end
 
--- иконка башни: ищем картинку внутри main (…towerContainer["4scrolling"].Hacker.main)
-local function findIcon(main)
+-- иконка башни: ищем картинку внутри карточки (…towerContainer["4scrolling"].Hacker)
+local function findIcon(root)
     local best
     pcall(function()
-        for _, d in ipairs(main:GetDescendants()) do
+        for _, d in ipairs(root:GetDescendants()) do
             if (d:IsA("ImageLabel") or d:IsA("ImageButton")) and d.Image and d.Image ~= "" then
                 local n = tostring(d.Name):lower()
                 if n:find("icon") or n:find("image") or n:find("tower") or n:find("thumb") then
@@ -109,36 +109,45 @@ local function findIcon(main)
     return best
 end
 
+-- towerContainer ищем рекурсивно — не зависим от точной цепочки Holder/windowFrame/...
+local function findContainer()
+    local pg = LP:FindFirstChild("PlayerGui")
+    if not pg then return nil, "PlayerGui не найден" end
+    local view = pg:FindFirstChild("ReactUniversalInventoryView")
+    if view then
+        local tc = view:FindFirstChild("towerContainer", true)
+        if tc then return tc end
+    end
+    local tc = pg:FindFirstChild("towerContainer", true)
+    if tc then return tc end
+    if not view then
+        return nil, "Инвентарь не открыт: нет ReactUniversalInventoryView.\nОткрой вкладку с башнями и нажми ОБНОВИТЬ."
+    end
+    return nil, "Не найден towerContainer.\nОткрой вкладку с башнями и нажми ОБНОВИТЬ."
+end
+
 -- showAll = true -> вернуть вообще все башни (без фильтра по topThing)
 -- возвращает: список {name=, icon=}  ИЛИ  nil, причина
 local function scanTowers(showAll)
-    local pg = LP:FindFirstChild("PlayerGui")
-    if not pg then return nil, "PlayerGui не найден" end
+    local node, err = findContainer()
+    if not node then return nil, err end
 
-    local node, chain = pg, { "ReactUniversalInventoryView", "Holder", "windowFrame", "towersInventoryFrame", "towerContainer" }
-    for _, name in ipairs(chain) do
-        local nxt = node:FindFirstChild(name)
-        if not nxt then
-            return nil, "Не прогрузилось: нет «" .. name .. "»\nОткрой инвентарь башен в игре или перезайди."
-        end
-        node = nxt
-    end
-
+    -- берём карточки напрямую: towerContainer["4scrolling"].Hacker  (без .main)
     local scrolls, cells, withTop, found, seen = 0, 0, 0, {}, {}
     for _, sc in ipairs(node:GetChildren()) do
         if tostring(sc.Name):lower():find("scrolling") then
             scrolls = scrolls + 1
             for _, tw in ipairs(sc:GetChildren()) do
                 pcall(function()
-                    local main = tw:FindFirstChild("main")
-                    if not main then return end
+                    if not tw:IsA("GuiObject") then return end
                     cells = cells + 1
-                    local top = main:FindFirstChild("topThing")
+                    local top = tw:FindFirstChild("topThing", true)
                     if top then withTop = withTop + 1 end
-                    local ok = showAll or (top and isHidden(top))
+                    -- доступна, если topThing невидим; если topThing нет вовсе — не отсеиваем
+                    local ok = showAll or (not top) or isHidden(top)
                     if ok and not seen[tw.Name] then
                         seen[tw.Name] = true
-                        table.insert(found, { name = tw.Name, icon = findIcon(main) })
+                        table.insert(found, { name = tw.Name, icon = findIcon(tw) })
                     end
                 end)
             end
@@ -146,11 +155,11 @@ local function scanTowers(showAll)
     end
 
     if scrolls == 0 then
-        return nil, "В towerContainer нет ни одной вкладки «scrolling».\nИнвентарь не прогрузился — нужно перезайти."
+        return nil, "Вкладок «scrolling» не найдено (детей: " .. #node:GetChildren() .. ").\nОткрой вкладку с башнями и нажми ОБНОВИТЬ."
     end
     if #found == 0 then
         return nil, "Вкладок: " .. scrolls .. ", карточек: " .. cells .. ", с topThing: " .. withTop ..
-            "\nПодходящих не найдено. Нажми «ВСЕ», чтобы показать все башни."
+            "\nНичего не подошло — нажми «ВСЕ»."
     end
     table.sort(found, function(a, b) return a.name < b.name end)
     return found
@@ -513,6 +522,13 @@ local function showSettings(server, key)
         end
         end)
         if not okRender then showError("Ошибка отрисовки:\n" .. tostring(renderErr)) end
+    end
+
+    -- внешняя защита: ни одна ошибка не оставит окно пустым
+    local rawBuild = build
+    build = function()
+        local ok, e = pcall(rawBuild)
+        if not ok then pcall(showError, "Ошибка: " .. tostring(e)) end
     end
 
     saveB.MouseButton1Click:Connect(function()
