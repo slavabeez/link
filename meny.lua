@@ -109,8 +109,9 @@ local function findIcon(main)
     return best
 end
 
+-- showAll = true -> вернуть вообще все башни (без фильтра по topThing)
 -- возвращает: список {name=, icon=}  ИЛИ  nil, причина
-local function scanTowers()
+local function scanTowers(showAll)
     local pg = LP:FindFirstChild("PlayerGui")
     if not pg then return nil, "PlayerGui не найден" end
 
@@ -123,15 +124,19 @@ local function scanTowers()
         node = nxt
     end
 
-    local scrolls, found, seen = 0, {}, {}
+    local scrolls, cells, withTop, found, seen = 0, 0, 0, {}, {}
     for _, sc in ipairs(node:GetChildren()) do
         if tostring(sc.Name):lower():find("scrolling") then
             scrolls = scrolls + 1
             for _, tw in ipairs(sc:GetChildren()) do
                 pcall(function()
                     local main = tw:FindFirstChild("main")
-                    local top = main and main:FindFirstChild("topThing")
-                    if top and isHidden(top) and not seen[tw.Name] then
+                    if not main then return end
+                    cells = cells + 1
+                    local top = main:FindFirstChild("topThing")
+                    if top then withTop = withTop + 1 end
+                    local ok = showAll or (top and isHidden(top))
+                    if ok and not seen[tw.Name] then
                         seen[tw.Name] = true
                         table.insert(found, { name = tw.Name, icon = findIcon(main) })
                     end
@@ -144,7 +149,8 @@ local function scanTowers()
         return nil, "В towerContainer нет ни одной вкладки «scrolling».\nИнвентарь не прогрузился — нужно перезайти."
     end
     if #found == 0 then
-        return nil, "Просмотрено вкладок: " .. scrolls .. ", доступных башен не найдено\n(у всех topThing видим). Попробуй перезайти."
+        return nil, "Вкладок: " .. scrolls .. ", карточек: " .. cells .. ", с topThing: " .. withTop ..
+            "\nПодходящих не найдено. Нажми «ВСЕ», чтобы показать все башни."
     end
     table.sort(found, function(a, b) return a.name < b.name end)
     return found
@@ -380,10 +386,14 @@ local function showSettings(server, key)
     local selected = loadTowers()
     local function isSel(n) for _, v in ipairs(selected) do if v == n then return true end end return false end
 
+    -- три кнопки в ряд: 3*112 + 2*6 = 348 = ширина карточки минус поля
     local saveB = bigBtn("СОХРАНИТЬ", 372, MONEY_C)
-    saveB.Size = UDim2.new(0.5, -20, 0, 40)
+    saveB.Position = UDim2.fromOffset(16, 372); saveB.Size = UDim2.fromOffset(112, 40)
     local rescanB = bigBtn("ОБНОВИТЬ", 372, Color3.fromRGB(70, 65, 100))
-    rescanB.Position = UDim2.new(0.5, 4, 0, 372); rescanB.Size = UDim2.new(0.5, -20, 0, 40)
+    rescanB.Position = UDim2.fromOffset(134, 372); rescanB.Size = UDim2.fromOffset(112, 40)
+    local allB = bigBtn("ВСЕ", 372, Color3.fromRGB(70, 65, 100))
+    allB.Position = UDim2.fromOffset(252, 372); allB.Size = UDim2.fromOffset(112, 40)
+    local showAll = false
 
     local hint = label(card, "", 11, SUB, Enum.Font.Gotham)
     hint.Size = UDim2.new(1, -32, 0, 16); hint.Position = UDim2.new(0, 16, 1, -22)
@@ -423,12 +433,14 @@ local function showSettings(server, key)
 
     build = function()
         for _, ch in ipairs(list:GetChildren()) do if ch:IsA("GuiObject") then ch:Destroy() end end
-        local towers, err = scanTowers()
+        local okScan, towers, err = pcall(scanTowers, showAll)
+        if not okScan then return showError("Ошибка скрипта:\n" .. tostring(towers)) end
         if not towers then return showError(err) end
 
         grid.Enabled = true   -- вернуть сетку после экрана ошибки
         refreshInfo()
-        hint.Text = "Доступно башен: " .. #towers .. "  •  максимум " .. MAX_PICK
+        hint.Text = (showAll and "Показаны ВСЕ башни: " or "Доступно башен: ") .. #towers .. "  •  максимум " .. MAX_PICK
+        local okRender, renderErr = pcall(function()
         for i, t in ipairs(towers) do
             local name = t.name
 
@@ -499,6 +511,8 @@ local function showSettings(server, key)
                 refreshInfo()
             end)
         end
+        end)
+        if not okRender then showError("Ошибка отрисовки:\n" .. tostring(renderErr)) end
     end
 
     saveB.MouseButton1Click:Connect(function()
@@ -509,6 +523,13 @@ local function showSettings(server, key)
         task.delay(1.2, function() if saveB.Parent then saveB.Text = "СОХРАНИТЬ" end end)
     end)
     rescanB.MouseButton1Click:Connect(function()
+        hint.TextColor3 = SUB; hint.Text = "Поиск башен..."
+        task.defer(build)
+    end)
+    allB.MouseButton1Click:Connect(function()
+        showAll = not showAll
+        allB.Text = showAll and "ДОСТУПНЫЕ" or "ВСЕ"
+        allB.BackgroundColor3 = showAll and ACCENT1 or Color3.fromRGB(70, 65, 100)
         hint.TextColor3 = SUB; hint.Text = "Поиск башен..."
         task.defer(build)
     end)
