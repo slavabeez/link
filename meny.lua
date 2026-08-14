@@ -383,9 +383,9 @@ showSettings = function(server, key)
         local lpad = Instance.new("UIPadding", list)
         lpad.PaddingTop = UDim.new(0, 8); lpad.PaddingBottom = UDim.new(0, 8)
         lpad.PaddingLeft = UDim.new(0, 8); lpad.PaddingRight = UDim.new(0, 8)
-        local grid = Instance.new("UIGridLayout", list)
-        grid.CellSize = UDim2.fromOffset(104, 116); grid.CellPadding = UDim2.fromOffset(8, 8)
-        grid.SortOrder = Enum.SortOrder.LayoutOrder
+        -- список строками (сетка в некоторых исполнителях не отрисовывается)
+        local grid = Instance.new("UIListLayout", list)
+        grid.Padding = UDim.new(0, 5); grid.SortOrder = Enum.SortOrder.LayoutOrder
 
         local hint = label(page, "", 11, SUB, Enum.Font.Gotham)
         hint.Size = UDim2.new(1, -32, 0, 16); hint.Position = UDim2.new(0, 16, 1, -22)
@@ -450,27 +450,28 @@ showSettings = function(server, key)
 
             for i, t in ipairs(towers) do
                 local name = t.name
+                -- строка: иконка слева, отметка и название — правее, без наложения
                 local cell = Instance.new("TextButton")
-                cell.Size = UDim2.fromOffset(104, 116); cell.LayoutOrder = i
+                cell.Size = UDim2.new(1, -12, 0, 42); cell.LayoutOrder = i
                 cell.BackgroundColor3 = Color3.fromRGB(38, 37, 52)
                 cell.Text = ""; cell.BorderSizePixel = 0; cell.AutoButtonColor = false
-                cell.ClipsDescendants = true; cell.Parent = list
-                corner(cell, 9)
+                cell.Parent = list
+                corner(cell, 8)
                 local st = Instance.new("UIStroke", cell)
                 st.Thickness = 1.5; st.Color = Color3.fromRGB(72, 70, 98); st.Transparency = 0.15
 
                 local ic = Instance.new("ImageLabel")
-                ic.Size = UDim2.new(1, -10, 0, 78); ic.Position = UDim2.fromOffset(5, 5)
+                ic.Size = UDim2.fromOffset(32, 32); ic.Position = UDim2.fromOffset(6, 5)
                 ic.BackgroundColor3 = Color3.fromRGB(26, 25, 38); ic.BackgroundTransparency = 0.25
                 ic.Image = t.icon or ""; ic.ScaleType = Enum.ScaleType.Fit
-                ic.Parent = cell; corner(ic, 7)
+                ic.Parent = cell; corner(ic, 6)
 
                 local nm = Instance.new("TextLabel")
                 nm.BackgroundTransparency = 1
-                nm.Size = UDim2.new(1, -8, 0, 24); nm.Position = UDim2.new(0, 4, 1, -27)
-                nm.Text = name; nm.Font = Enum.Font.GothamBold; nm.TextSize = 12
+                nm.Size = UDim2.new(1, -52, 1, 0); nm.Position = UDim2.fromOffset(46, 0)
+                nm.Text = name; nm.Font = Enum.Font.GothamBold; nm.TextSize = 14
                 nm.TextColor3 = TXT; nm.TextTruncate = Enum.TextTruncate.AtEnd
-                nm.TextXAlignment = Enum.TextXAlignment.Center; nm.Parent = cell
+                nm.TextXAlignment = Enum.TextXAlignment.Left; nm.Parent = cell
 
                 local glow
                 local function paint()
@@ -478,7 +479,7 @@ showSettings = function(server, key)
                     if glow then glow:Cancel(); glow = nil end
                     if on then
                         cell.BackgroundColor3 = Color3.fromRGB(58, 52, 28)
-                        st.Color = Color3.fromRGB(255, 208, 45); st.Thickness = 3; st.Transparency = 0
+                        st.Color = Color3.fromRGB(255, 208, 45); st.Thickness = 2.5; st.Transparency = 0
                         nm.TextColor3 = Color3.fromRGB(255, 224, 120)
                         glow = Tween:Create(st, TweenInfo.new(0.85, Enum.EasingStyle.Sine, Enum.EasingDirection.InOut, -1, true),
                             { Transparency = 0.45 })
