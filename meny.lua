@@ -87,6 +87,26 @@ local function saveTowers(list)
 end
 
 -- ---------- поиск башен в инвентаре ----------
+-- картинка-маркер в topThing.icon: такая башня доступна ВНЕ ЗАВИСИМОСТИ от видимости
+local MARK_ID = "8418293221"
+local function hasMarker(top)
+    local ok, res = pcall(function()
+        local icon = top:FindFirstChild("icon", true)
+        if icon and (icon:IsA("ImageLabel") or icon:IsA("ImageButton"))
+           and tostring(icon.Image or ""):find(MARK_ID, 1, true) then
+            return true
+        end
+        -- запасной вариант: маркер в любой картинке внутри topThing
+        for _, d in ipairs(top:GetDescendants()) do
+            if (d:IsA("ImageLabel") or d:IsA("ImageButton"))
+               and tostring(d.Image or ""):find(MARK_ID, 1, true) then
+                return true
+            end
+        end
+        return false
+    end)
+    return ok and res or false
+end
 local function isHidden(o)
     local ok, res = pcall(function()
         if o:IsA("GuiObject") and o.Visible == false then return true end
@@ -125,7 +145,7 @@ end
 local function scanTowers(showAll)
     local node, err = findContainer()
     if not node then return nil, err end
-    local scrolls, cells, withTop, found, seen = 0, 0, 0, {}, {}
+    local scrolls, cells, withTop, withMark, found, seen = 0, 0, 0, 0, {}, {}
     for _, sc in ipairs(node:GetChildren()) do
         if tostring(sc.Name):lower():find("scrolling") then
             scrolls = scrolls + 1
@@ -134,8 +154,14 @@ local function scanTowers(showAll)
                     if not tw:IsA("GuiObject") then return end
                     cells = cells + 1
                     local top = tw:FindFirstChild("topThing", true)
-                    if top then withTop = withTop + 1 end
-                    local ok = showAll or (not top) or isHidden(top)
+                    local mark = false
+                    if top then
+                        withTop = withTop + 1
+                        mark = hasMarker(top)
+                        if mark then withMark = withMark + 1 end
+                    end
+                    -- доступна: маркер-картинка ИЛИ невидимый topThing (либо topThing нет вовсе)
+                    local ok = showAll or (not top) or mark or isHidden(top)
                     if ok and not seen[tw.Name] then
                         seen[tw.Name] = true
                         table.insert(found, { name = tw.Name, icon = findIcon(tw) })
@@ -149,7 +175,7 @@ local function scanTowers(showAll)
     end
     if #found == 0 then
         return nil, "Вкладок: " .. scrolls .. ", карточек: " .. cells .. ", с topThing: " .. withTop ..
-            "\nНичего не подошло — нажми «ВСЕ»."
+            ", с маркером: " .. withMark .. "\nНичего не подошло — нажми «ВСЕ»."
     end
     table.sort(found, function(a, b) return a.name < b.name end)
     return found
