@@ -609,25 +609,25 @@ showFarm = function(server, key, errMsg, dir)
         status.Text = #picked > 0 and ("Башни: " .. table.concat(picked, ", ")) or "Готово к работе  •  F1 / F2"
         if errMsg then status.Text = "! " .. errMsg; status.TextColor3 = WARN_C end
 
-        -- третья кнопка: рекордер (пока недоступен — выглядит неактивной)
+        -- третья кнопка: рекордер (бета)
+        local REC_C = Color3.fromRGB(230, 120, 90)
         local recB = Instance.new("TextButton")
         recB.Size = UDim2.new(1, -32, 0, 50); recB.Position = UDim2.new(0, 16, 0, 178)
-        recB.BackgroundColor3 = Color3.fromRGB(54, 53, 68)
-        recB.Text = "RECORDER   (SOON)"; recB.TextColor3 = Color3.fromRGB(128, 130, 150)
+        recB.BackgroundColor3 = REC_C
+        recB.Text = "RECORDER   (BETA)"; recB.TextColor3 = Color3.new(1, 1, 1)
         recB.Font = Enum.Font.GothamBold; recB.TextSize = 15; recB.BorderSizePixel = 0
         recB.AutoButtonColor = false; recB.Parent = page
-        corner(recB, 10)
+        corner(recB, 10); grad(recB, REC_C, Color3.fromRGB(190, 85, 70), 35)
         local rs = Instance.new("UIStroke", recB)
-        rs.Thickness = 1.4; rs.Transparency = 0.65; rs.Color = Color3.fromRGB(95, 95, 118)
-        recB.MouseButton1Click:Connect(function()
-            status.Text = "Recorder — coming soon"; status.TextColor3 = SUB
-        end)
+        rs.Thickness = 1.4; rs.Transparency = 0.45; rs.Color = REC_C:Lerp(Color3.new(1, 1, 1), 0.4)
+        hoverify(recB, REC_C, REC_C:Lerp(Color3.new(1, 1, 1), 0.18))
 
         local active = false
         local function runFarm(kind)
             if active then return end
             active = true
-            showLoading((kind == "gems" and "GEMS FARM" or "MONEY FARM"), function(setStatus)
+            local titles = { gems = "GEMS FARM", money = "MONEY FARM", recorder = "RECORDER" }
+            showLoading(titles[kind] or "ЗАГРУЗКА", function(setStatus)
                 setStatus("Подключение к серверу"); task.wait(0.25)
                 setStatus("Загрузка скрипта")
                 local ok = runScript(server, key, kind)
@@ -638,6 +638,7 @@ showFarm = function(server, key, errMsg, dir)
         end
         gemsB.MouseButton1Click:Connect(function() runFarm("gems") end)
         moneyB.MouseButton1Click:Connect(function() runFarm("money") end)
+        recB.MouseButton1Click:Connect(function() runFarm("recorder") end)
         UIS.InputBegan:Connect(function(input, gp)
             if gp or not page.Parent then return end
             if input.KeyCode == Enum.KeyCode.F1 then runFarm("gems")
