@@ -1,1 +1,1 @@
-https://distinct-candy-rated-crystal.trycloudflare.com
+https://painted-vic-overview-editing.trycloudflare.com
