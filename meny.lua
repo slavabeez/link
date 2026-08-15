@@ -576,7 +576,7 @@ end
 
 -- ====================== МЕНЮ TDS FARM ======================
 showFarm = function(server, key, errMsg, dir)
-    local w, h = 300, 210
+    local w, h = 300, 264
     showPage(w, h, dir or 1, function(page)
         local bar = header(page, "TDS FARM", w)
         iconBtn(bar, "X", -36, Color3.fromRGB(225, 70, 80), Color3.fromRGB(245, 95, 105)).MouseButton1Click:Connect(closeAll)
@@ -608,6 +608,20 @@ showFarm = function(server, key, errMsg, dir)
         status.TextXAlignment = Enum.TextXAlignment.Center
         status.Text = #picked > 0 and ("Башни: " .. table.concat(picked, ", ")) or "Готово к работе  •  F1 / F2"
         if errMsg then status.Text = "! " .. errMsg; status.TextColor3 = WARN_C end
+
+        -- третья кнопка: рекордер (пока недоступен — выглядит неактивной)
+        local recB = Instance.new("TextButton")
+        recB.Size = UDim2.new(1, -32, 0, 50); recB.Position = UDim2.new(0, 16, 0, 178)
+        recB.BackgroundColor3 = Color3.fromRGB(54, 53, 68)
+        recB.Text = "РЕКОРДЕР   (SOON)"; recB.TextColor3 = Color3.fromRGB(128, 130, 150)
+        recB.Font = Enum.Font.GothamBold; recB.TextSize = 15; recB.BorderSizePixel = 0
+        recB.AutoButtonColor = false; recB.Parent = page
+        corner(recB, 10)
+        local rs = Instance.new("UIStroke", recB)
+        rs.Thickness = 1.4; rs.Transparency = 0.65; rs.Color = Color3.fromRGB(95, 95, 118)
+        recB.MouseButton1Click:Connect(function()
+            status.Text = "Рекордер появится позже"; status.TextColor3 = SUB
+        end)
 
         local active = false
         local function runFarm(kind)
