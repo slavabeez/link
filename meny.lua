@@ -613,14 +613,14 @@ showFarm = function(server, key, errMsg, dir)
         local recB = Instance.new("TextButton")
         recB.Size = UDim2.new(1, -32, 0, 50); recB.Position = UDim2.new(0, 16, 0, 178)
         recB.BackgroundColor3 = Color3.fromRGB(54, 53, 68)
-        recB.Text = "РЕКОРДЕР   (SOON)"; recB.TextColor3 = Color3.fromRGB(128, 130, 150)
+        recB.Text = "RECORDER   (SOON)"; recB.TextColor3 = Color3.fromRGB(128, 130, 150)
         recB.Font = Enum.Font.GothamBold; recB.TextSize = 15; recB.BorderSizePixel = 0
         recB.AutoButtonColor = false; recB.Parent = page
         corner(recB, 10)
         local rs = Instance.new("UIStroke", recB)
         rs.Thickness = 1.4; rs.Transparency = 0.65; rs.Color = Color3.fromRGB(95, 95, 118)
         recB.MouseButton1Click:Connect(function()
-            status.Text = "Рекордер появится позже"; status.TextColor3 = SUB
+            status.Text = "Recorder — coming soon"; status.TextColor3 = SUB
         end)
 
         local active = false
