@@ -88,7 +88,7 @@ end
 
 -- ---------- поиск башен в инвентаре ----------
 -- картинка-маркер в topThing.icon: такая башня доступна ВНЕ ЗАВИСИМОСТИ от видимости
-local MARK_ID = "8418293221"
+local MARK_ID = "8418292821"
 local function hasMarker(top)
     local ok, res = pcall(function()
         local icon = top:FindFirstChild("icon", true)
