@@ -1,1 +1,1 @@
-https://packets-authority-fascinating-thereby.trycloudflare.com
+https://enjoyed-con-date-specials.trycloudflare.com
