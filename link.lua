@@ -1,1 +1,1 @@
-https://flag-dome-thunder-tips.trycloudflare.com
+https://examining-doctor-specialized-wagon.trycloudflare.com
