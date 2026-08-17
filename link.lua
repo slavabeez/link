@@ -1,1 +1,1 @@
-https://devon-cord-infant-fcc.trycloudflare.com
+https://api.trycloudflare.com
