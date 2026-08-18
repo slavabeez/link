@@ -1,1 +1,1 @@
-https://arcade-university-allan-parks.trycloudflare.com
+https://barry-midwest-loud-galaxy.trycloudflare.com
