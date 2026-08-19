@@ -1,1 +1,1 @@
-https://publicity-tapes-replica-totals.trycloudflare.com
+https://designation-samba-swim-specification.trycloudflare.com
