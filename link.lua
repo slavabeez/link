@@ -1,1 +1,1 @@
-https://beginner-hardly-would-enhancing.trycloudflare.com
+https://api.trycloudflare.com
