@@ -1,1 +1,1 @@
-https://tiger-indirect-households-strain.trycloudflare.com
+https://api.trycloudflare.com
