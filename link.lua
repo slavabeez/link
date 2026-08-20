@@ -1,1 +1,1 @@
-https://killing-registry-friend-prices.trycloudflare.com
+https://api.trycloudflare.com
