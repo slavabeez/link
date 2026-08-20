@@ -1,1 +1,1 @@
-https://marketing-intl-glow-nobody.trycloudflare.com
+https://killing-registry-friend-prices.trycloudflare.com
