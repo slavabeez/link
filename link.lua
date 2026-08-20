@@ -1,1 +1,1 @@
-https://api.trycloudflare.com
+https://lone-bears-shall-scholarships.trycloudflare.com
