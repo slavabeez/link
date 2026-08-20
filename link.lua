@@ -1,1 +1,1 @@
-https://bride-propecia-restored-charges.trycloudflare.com
+https://api.trycloudflare.com
