@@ -1,1 +1,1 @@
-https://palmer-car-cordless-roads.trycloudflare.com
+https://api.trycloudflare.com
