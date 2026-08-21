@@ -1,1 +1,1 @@
-https://thehun-tradition-pressing-apparent.trycloudflare.com
+https://mounting-computer-average-polyphonic.trycloudflare.com
