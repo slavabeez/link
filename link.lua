@@ -1,1 +1,1 @@
-https://peas-ought-provincial-curriculum.trycloudflare.com
+https://ranking-proceed-shortly-judgment.trycloudflare.com
