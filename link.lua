@@ -1,1 +1,1 @@
-https://heading-stockings-commonly-preferred.trycloudflare.com
+https://jerry-participated-ser-super.trycloudflare.com
