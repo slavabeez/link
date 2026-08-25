@@ -1,1 +1,1 @@
-https://remainder-previous-payday-relax.trycloudflare.com
+https://yeast-enabled-squad-become.trycloudflare.com
