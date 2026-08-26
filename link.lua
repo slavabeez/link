@@ -1,1 +1,1 @@
-https://band-bracelet-trucks-discussing.trycloudflare.com
+https://api.trycloudflare.com
