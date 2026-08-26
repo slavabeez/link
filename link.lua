@@ -1,1 +1,1 @@
-https://api.trycloudflare.com
+https://cooler-when-afternoon-titled.trycloudflare.com
