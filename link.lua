@@ -1,1 +1,1 @@
-https://cooler-when-afternoon-titled.trycloudflare.com
+https://gently-laboratories-listing-ministers.trycloudflare.com
