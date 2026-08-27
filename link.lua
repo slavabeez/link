@@ -1,1 +1,1 @@
-https://premium-becoming-fred-databases.trycloudflare.com
+https://omaha-students-steel-carolina.trycloudflare.com
