@@ -1,1 +1,1 @@
-https://learned-ministries-apartments-readily.trycloudflare.com
+https://api.trycloudflare.com
