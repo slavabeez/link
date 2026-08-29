@@ -1,1 +1,1 @@
-https://cradle-lbs-undertaken-somewhere.trycloudflare.com
+https://api.trycloudflare.com
