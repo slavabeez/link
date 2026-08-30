@@ -1,1 +1,1 @@
-https://chan-packages-significance-radius.trycloudflare.com
+https://alloy-approved-relevant-specified.trycloudflare.com
