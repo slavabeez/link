@@ -1,1 +1,1 @@
-https://postposted-exist-reported-resources.trycloudflare.com
+https://api.trycloudflare.com
