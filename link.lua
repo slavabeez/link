@@ -1,1 +1,1 @@
-https://increasing-family-dependence-mitsubishi.trycloudflare.com
+https://educational-expected-reseller-panel.trycloudflare.com
