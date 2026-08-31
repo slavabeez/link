@@ -1,1 +1,1 @@
-https://baseline-res-pale-platform.trycloudflare.com
+https://completing-kay-accent-explorer.trycloudflare.com
