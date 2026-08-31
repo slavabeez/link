@@ -1,1 +1,1 @@
-https://educational-expected-reseller-panel.trycloudflare.com
+https://organisation-jennifer-spread-senator.trycloudflare.com
