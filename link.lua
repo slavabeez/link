@@ -1,1 +1,1 @@
-https://api.trycloudflare.com
+https://baseline-res-pale-platform.trycloudflare.com
