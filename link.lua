@@ -1,1 +1,1 @@
-https://updates-referral-selling-practitioner.trycloudflare.com
+https://aware-higher-independence-sapphire.trycloudflare.com
