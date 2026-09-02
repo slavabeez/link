@@ -1,1 +1,1 @@
-https://analog-shaw-creature-alternative.trycloudflare.com
+https://leader-effective-their-one.trycloudflare.com
