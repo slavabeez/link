@@ -1,1 +1,1 @@
-https://gen-cabinet-locate-biographies.trycloudflare.com
+https://arrived-huge-qualities-installed.trycloudflare.com
