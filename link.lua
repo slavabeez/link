@@ -1,1 +1,1 @@
-https://towns-belts-inns-instances.trycloudflare.com
+https://edt-allergy-prairie-learning.trycloudflare.com
