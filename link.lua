@@ -1,1 +1,1 @@
-https://arrived-huge-qualities-installed.trycloudflare.com
+https://towns-belts-inns-instances.trycloudflare.com
