@@ -1,1 +1,1 @@
-https://perfume-amount-promotion-prospective.trycloudflare.com
+https://criterion-trigger-usd-directors.trycloudflare.com
