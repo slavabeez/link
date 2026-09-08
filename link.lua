@@ -1,1 +1,1 @@
-https://bow-owns-counters-yourself.trycloudflare.com
+https://ethernet-tears-hopes-gmt.trycloudflare.com
