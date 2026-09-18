@@ -1,1 +1,1 @@
-https://core-fastest-documentary-methodology.trycloudflare.com
+https://electron-tom-ancient-seekers.trycloudflare.com
