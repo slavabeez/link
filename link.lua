@@ -1,1 +1,1 @@
-https://candidates-held-hrs-podcast.trycloudflare.com
+https://api.trycloudflare.com
