@@ -1,1 +1,1 @@
-https://game-load-surname-lead.trycloudflare.com
+https://api.trycloudflare.com
