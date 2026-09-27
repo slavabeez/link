@@ -1,1 +1,1 @@
-https://dpi-clear-jury-calculators.trycloudflare.com
+https://assurance-rapidly-two-petersburg.trycloudflare.com
