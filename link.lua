@@ -1,1 +1,1 @@
-https://api.trycloudflare.com
+https://actions-flashers-phrases-activated.trycloudflare.com
