@@ -1,1 +1,1 @@
-https://actions-flashers-phrases-activated.trycloudflare.com
+https://last-pan-army-figures.trycloudflare.com
