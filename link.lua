@@ -1,1 +1,1 @@
-https://telescope-pickup-vii-radius.trycloudflare.com
+https://api.trycloudflare.com
