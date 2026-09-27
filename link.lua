@@ -1,1 +1,1 @@
-https://ordinary-studies-parallel-wiring.trycloudflare.com
+https://api.trycloudflare.com
