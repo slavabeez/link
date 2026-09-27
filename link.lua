@@ -1,1 +1,1 @@
-https://assurance-rapidly-two-petersburg.trycloudflare.com
+https://ordinary-studies-parallel-wiring.trycloudflare.com
