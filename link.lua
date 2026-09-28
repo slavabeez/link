@@ -1,1 +1,1 @@
-https://higher-kelly-thermal-rack.trycloudflare.com
+https://proud-holds-permission-prince.trycloudflare.com
