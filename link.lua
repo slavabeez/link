@@ -1,1 +1,1 @@
-https://named-local-calm-johnston.trycloudflare.com
+https://deutsche-grad-gig-limitations.trycloudflare.com
