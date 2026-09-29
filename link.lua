@@ -1,1 +1,1 @@
-https://candles-plan-acquisition-each.trycloudflare.com
+https://each-pants-claimed-ahead.trycloudflare.com
