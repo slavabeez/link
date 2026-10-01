@@ -1,1 +1,1 @@
-https://maximum-powerful-portal-creativity.trycloudflare.com
+https://sudden-certified-eternal-anything.trycloudflare.com
