@@ -1,1 +1,1 @@
-https://sudden-certified-eternal-anything.trycloudflare.com
+https://brief-nail-santa-wichita.trycloudflare.com
