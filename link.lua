@@ -1,1 +1,1 @@
-https://instruction-base-til-treasurer.trycloudflare.com
+https://creatures-kissing-socks-embedded.trycloudflare.com
