@@ -1,1 +1,1 @@
-https://gorgeous-sur-cameras-bridges.trycloudflare.com
+https://inflation-approaches-cow-spirits.trycloudflare.com
