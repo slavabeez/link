@@ -1,1 +1,1 @@
-https://inflation-approaches-cow-spirits.trycloudflare.com
+https://barnes-faster-pending-initiative.trycloudflare.com
