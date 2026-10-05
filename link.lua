@@ -1,1 +1,1 @@
-https://firewire-resolved-configured-yeah.trycloudflare.com
+https://growing-align-consist-airline.trycloudflare.com
