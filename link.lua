@@ -1,1 +1,1 @@
-https://specialist-prizes-blind-director.trycloudflare.com
+https://navy-geo-transparent-refuse.trycloudflare.com
