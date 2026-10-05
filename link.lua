@@ -1,1 +1,1 @@
-https://growing-align-consist-airline.trycloudflare.com
+https://specialist-prizes-blind-director.trycloudflare.com
