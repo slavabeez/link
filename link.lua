@@ -1,1 +1,1 @@
-https://wires-youth-closure-four.trycloudflare.com
+https://firewire-resolved-configured-yeah.trycloudflare.com
