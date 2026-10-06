@@ -1,1 +1,1 @@
-https://portions-records-supplements-feeds.trycloudflare.com
+https://api.trycloudflare.com
