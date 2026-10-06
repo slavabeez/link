@@ -1,1 +1,1 @@
-https://substance-twin-stick-ian.trycloudflare.com
+https://speeds-human-brian-isolation.trycloudflare.com
