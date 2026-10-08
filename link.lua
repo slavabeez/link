@@ -1,1 +1,1 @@
-https://complexity-stan-currencies-anime.trycloudflare.com
+https://sunday-cover-meanwhile-certified.trycloudflare.com
