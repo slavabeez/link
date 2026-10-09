@@ -1,1 +1,1 @@
-https://flag-comedy-solo-laws.trycloudflare.com
+https://garlic-castle-prostate-interesting.trycloudflare.com
