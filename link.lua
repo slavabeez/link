@@ -1,1 +1,1 @@
-https://use-postcards-biography-closure.trycloudflare.com
+https://faster-databases-shelter-shortcuts.trycloudflare.com
