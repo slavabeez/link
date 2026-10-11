@@ -1,1 +1,1 @@
-https://icons-nomination-var-hugh.trycloudflare.com
+https://use-postcards-biography-closure.trycloudflare.com
