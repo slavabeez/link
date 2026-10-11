@@ -1,1 +1,1 @@
-https://faster-databases-shelter-shortcuts.trycloudflare.com
+https://technologies-iron-giant-widescreen.trycloudflare.com
