@@ -1,1 +1,1 @@
-https://scsi-argument-burning-kent.trycloudflare.com
+https://explicit-doctrine-schema-marathon.trycloudflare.com
