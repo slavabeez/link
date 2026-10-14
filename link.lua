@@ -1,1 +1,1 @@
-https://postposted-galaxy-area-mozilla.trycloudflare.com
+https://lists-objects-graduation-corner.trycloudflare.com
