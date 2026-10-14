@@ -1,1 +1,1 @@
-https://lists-objects-graduation-corner.trycloudflare.com
+https://surrounding-air-truck-live.trycloudflare.com
