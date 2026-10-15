@@ -1,1 +1,1 @@
-https://diesel-analytical-navigate-drum.trycloudflare.com
+https://human-rapids-showed-name.trycloudflare.com
