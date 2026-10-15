@@ -1,1 +1,1 @@
-https://forecast-swim-achievement-ist.trycloudflare.com
+https://tournament-telephony-quantities-databases.trycloudflare.com
