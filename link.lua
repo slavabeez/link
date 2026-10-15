@@ -1,1 +1,1 @@
-https://explicit-doctrine-schema-marathon.trycloudflare.com
+https://diesel-analytical-navigate-drum.trycloudflare.com
