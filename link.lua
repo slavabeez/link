@@ -1,1 +1,1 @@
-https://attended-omissions-dust-william.trycloudflare.com
+https://buddy-studio-attempted-configured.trycloudflare.com
