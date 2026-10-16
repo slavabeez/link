@@ -1,1 +1,1 @@
-https://foam-challenges-hop-lunch.trycloudflare.com
+https://ext-signing-satin-finder.trycloudflare.com
