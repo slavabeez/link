@@ -1,1 +1,1 @@
-https://out-lonely-alert-except.trycloudflare.com
+https://seasonal-replaced-grant-tooth.trycloudflare.com
