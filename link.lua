@@ -1,1 +1,1 @@
-https://sam-set-bloggers-training.trycloudflare.com
+https://extent-explore-williams-internal.trycloudflare.com
