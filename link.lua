@@ -1,1 +1,1 @@
-https://attacked-close-alive-newcastle.trycloudflare.com
+https://sam-set-bloggers-training.trycloudflare.com
