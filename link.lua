@@ -1,1 +1,1 @@
-https://buddy-studio-attempted-configured.trycloudflare.com
+https://out-lonely-alert-except.trycloudflare.com
