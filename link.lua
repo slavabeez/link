@@ -1,1 +1,1 @@
-https://congratulations-views-beginner-immediately.trycloudflare.com
+https://predicted-warned-schedules-scholars.trycloudflare.com
