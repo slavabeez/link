@@ -1,1 +1,1 @@
-https://api.trycloudflare.com
+https://variety-insurance-notify-carbon.trycloudflare.com
