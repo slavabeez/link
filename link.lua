@@ -1,1 +1,1 @@
-https://minor-borders-emotional-fill.trycloudflare.com
+https://api.trycloudflare.com
