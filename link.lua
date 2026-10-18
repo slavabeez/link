@@ -1,1 +1,1 @@
-https://variety-insurance-notify-carbon.trycloudflare.com
+https://lifetime-kurt-hiking-navigation.trycloudflare.com
