@@ -1,1 +1,1 @@
-https://trembl-incredible-cir-coast.trycloudflare.com
+https://api.trycloudflare.com
