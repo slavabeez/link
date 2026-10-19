@@ -1,1 +1,1 @@
-https://scout-independent-principles-birmingham.trycloudflare.com
+https://mae-atlas-ear-hosts.trycloudflare.com
