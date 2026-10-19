@@ -1,1 +1,1 @@
-https://mae-atlas-ear-hosts.trycloudflare.com
+https://symbols-alike-icon-carolina.trycloudflare.com
