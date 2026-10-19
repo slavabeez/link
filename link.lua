@@ -1,1 +1,1 @@
-https://transparent-mines-racks-therefore.trycloudflare.com
+https://terrain-contributed-responded-distance.trycloudflare.com
