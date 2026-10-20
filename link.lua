@@ -1,1 +1,1 @@
-https://area-tuition-tmp-levy.trycloudflare.com
+https://opt-framework-los-memory.trycloudflare.com
