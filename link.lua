@@ -1,1 +1,1 @@
-https://circle-vitamins-exterior-without.trycloudflare.com
+https://api.trycloudflare.com
