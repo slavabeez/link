@@ -1,1 +1,1 @@
-https://src-drive-permission-leasing.trycloudflare.com
+https://api.trycloudflare.com
