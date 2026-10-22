@@ -1,1 +1,1 @@
-https://api.trycloudflare.com
+https://explicitly-fire-cycling-discs.trycloudflare.com
