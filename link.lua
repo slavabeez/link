@@ -1,1 +1,1 @@
-https://transcripts-guardian-oliver-toilet.trycloudflare.com
+https://api.trycloudflare.com
