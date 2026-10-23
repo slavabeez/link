@@ -1,1 +1,1 @@
-https://performer-postcards-shoulder-commission.trycloudflare.com
+https://api.trycloudflare.com
