@@ -1,1 +1,1 @@
-https://roof-joint-variety-reference.trycloudflare.com
+https://api.trycloudflare.com
