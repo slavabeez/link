@@ -1,1 +1,1 @@
-https://andrea-folk-utility-comment.trycloudflare.com
+https://api.trycloudflare.com
