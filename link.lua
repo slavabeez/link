@@ -1,1 +1,1 @@
-https://api.trycloudflare.com
+https://isolated-regional-cio-con.trycloudflare.com
