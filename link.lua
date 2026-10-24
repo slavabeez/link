@@ -1,1 +1,1 @@
-https://conventions-neck-depends-mate.trycloudflare.com
+https://api.trycloudflare.com
