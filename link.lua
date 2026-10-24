@@ -1,1 +1,1 @@
-https://society-kai-inch-prepare.trycloudflare.com
+https://san-both-author-cst.trycloudflare.com
