@@ -1,1 +1,1 @@
-https://puzzles-luxury-liberal-initiative.trycloudflare.com
+https://society-kai-inch-prepare.trycloudflare.com
