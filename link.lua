@@ -1,1 +1,1 @@
-https://comedy-adapters-motors-mainstream.trycloudflare.com
+https://junior-moves-fridge-ian.trycloudflare.com
