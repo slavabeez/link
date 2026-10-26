@@ -1,1 +1,1 @@
-https://allowance-persistent-knives-arch.trycloudflare.com
+https://breaking-cool-proteins-void.trycloudflare.com
