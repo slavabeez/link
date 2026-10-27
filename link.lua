@@ -1,1 +1,1 @@
-https://display-column-wishing-captured.trycloudflare.com
+https://opened-headers-method-prices.trycloudflare.com
