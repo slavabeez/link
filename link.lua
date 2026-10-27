@@ -1,1 +1,1 @@
-https://expanding-surgery-mon-popular.trycloudflare.com
+https://dealtime-foo-pasta-compile.trycloudflare.com
