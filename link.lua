@@ -1,1 +1,1 @@
-https://beyond-anyone-wave-beverage.trycloudflare.com
+https://starts-cool-projector-startup.trycloudflare.com
