@@ -1,1 +1,1 @@
-https://thou-traffic-facing-network.trycloudflare.com
+https://api.trycloudflare.com
