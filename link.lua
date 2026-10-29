@@ -1,1 +1,1 @@
-https://embassy-wisconsin-recorders-arrivals.trycloudflare.com
+https://biology-gateway-magic-aviation.trycloudflare.com
