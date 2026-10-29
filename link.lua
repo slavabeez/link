@@ -1,1 +1,1 @@
-https://camping-dna-blues-clearly.trycloudflare.com
+https://api.trycloudflare.com
