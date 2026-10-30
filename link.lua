@@ -1,1 +1,1 @@
-https://road-actor-outline-canvas.trycloudflare.com
+https://api.trycloudflare.com
