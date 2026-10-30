@@ -1,1 +1,1 @@
-https://defeat-implementing-sean-controlling.trycloudflare.com
+https://api.trycloudflare.com
