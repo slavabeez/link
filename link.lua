@@ -1,1 +1,1 @@
-https://remainder-neck-priorities-commissioners.trycloudflare.com
+https://api.trycloudflare.com
