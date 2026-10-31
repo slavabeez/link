@@ -1,1 +1,1 @@
-https://isaac-shoe-charge-dictionary.trycloudflare.com
+https://molecular-wrestling-evaluation-ministry.trycloudflare.com
