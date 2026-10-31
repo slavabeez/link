@@ -1,1 +1,1 @@
-https://candidates-discuss-widely-say.trycloudflare.com
+https://isaac-shoe-charge-dictionary.trycloudflare.com
