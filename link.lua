@@ -1,1 +1,1 @@
-https://api.trycloudflare.com
+https://rider-humanity-secondary-shark.trycloudflare.com
