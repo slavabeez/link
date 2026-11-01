@@ -1,1 +1,1 @@
-https://api.trycloudflare.com
+https://industrial-ours-work-celebs.trycloudflare.com
