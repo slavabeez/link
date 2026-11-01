@@ -1,1 +1,1 @@
-https://destiny-plants-bet-masters.trycloudflare.com
+https://subscriptions-leader-fell-blink.trycloudflare.com
