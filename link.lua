@@ -1,1 +1,1 @@
-https://gbp-debate-has-survive.trycloudflare.com
+https://api.trycloudflare.com
