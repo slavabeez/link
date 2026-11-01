@@ -1,1 +1,1 @@
-https://subscriptions-leader-fell-blink.trycloudflare.com
+https://api.trycloudflare.com
