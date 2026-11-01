@@ -1,1 +1,1 @@
-https://assure-distributor-music-rand.trycloudflare.com
+https://destiny-plants-bet-masters.trycloudflare.com
