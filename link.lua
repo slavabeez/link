@@ -1,1 +1,1 @@
-https://lean-tribune-lance-concluded.trycloudflare.com
+https://reduce-treating-comparable-trading.trycloudflare.com
