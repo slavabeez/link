@@ -1,1 +1,1 @@
-https://powers-gains-forum-wind.trycloudflare.com
+https://because-universal-generated-rounds.trycloudflare.com
