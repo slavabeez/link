@@ -1,1 +1,1 @@
-https://scratch-decor-communist-singles.trycloudflare.com
+https://prefer-internationally-return-serve.trycloudflare.com
