@@ -1,1 +1,1 @@
-https://advert-albert-infants-languages.trycloudflare.com
+https://grill-cpu-battle-refer.trycloudflare.com
