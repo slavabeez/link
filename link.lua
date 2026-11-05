@@ -1,1 +1,1 @@
-https://grill-cpu-battle-refer.trycloudflare.com
+https://combining-brochures-fields-attitudes.trycloudflare.com
