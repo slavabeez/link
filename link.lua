@@ -1,1 +1,1 @@
-https://any-generate-continent-semester.trycloudflare.com
+https://minority-colleagues-differential-wesley.trycloudflare.com
