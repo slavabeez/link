@@ -1,1 +1,1 @@
-https://maximize-amplifier-register-encountered.trycloudflare.com
+https://associates-becomes-exchange-ham.trycloudflare.com
