@@ -1,1 +1,1 @@
-https://educational-sin-spider-cashiers.trycloudflare.com
+https://beaver-arabia-collectible-liberal.trycloudflare.com
