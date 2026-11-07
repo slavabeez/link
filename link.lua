@@ -1,1 +1,1 @@
-https://arrow-depot-bookstore-solo.trycloudflare.com
+https://maximize-amplifier-register-encountered.trycloudflare.com
