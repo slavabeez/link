@@ -1,1 +1,1 @@
-https://beaver-arabia-collectible-liberal.trycloudflare.com
+https://tomato-ware-sir-power.trycloudflare.com
