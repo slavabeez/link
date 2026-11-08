@@ -1,1 +1,1 @@
-https://andale-boxing-targeted-automation.trycloudflare.com
+https://area-procedure-prohibited-cast.trycloudflare.com
