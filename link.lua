@@ -1,1 +1,1 @@
-https://planned-tough-depends-statement.trycloudflare.com
+https://andale-boxing-targeted-automation.trycloudflare.com
