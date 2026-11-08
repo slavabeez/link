@@ -1,1 +1,1 @@
-https://oscar-himself-hotel-settle.trycloudflare.com
+https://berry-trades-cases-equations.trycloudflare.com
