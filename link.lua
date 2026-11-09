@@ -1,1 +1,1 @@
-https://criteria-terminals-attempt-admitted.trycloudflare.com
+https://cooperative-experience-books-scenarios.trycloudflare.com
