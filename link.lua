@@ -1,1 +1,1 @@
-https://showers-shoe-cluster-early.trycloudflare.com
+https://attorney-gen-royalty-extensions.trycloudflare.com
