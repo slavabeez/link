@@ -1,1 +1,1 @@
-https://placing-drinking-deer-attend.trycloudflare.com
+https://collar-cow-adware-agreements.trycloudflare.com
