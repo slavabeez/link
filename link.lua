@@ -1,1 +1,1 @@
-https://collar-cow-adware-agreements.trycloudflare.com
+https://arbor-unlike-ping-somebody.trycloudflare.com
