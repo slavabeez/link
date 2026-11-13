@@ -1,1 +1,1 @@
-https://ten-rear-feelings-ted.trycloudflare.com
+https://clan-suse-shake-categories.trycloudflare.com
