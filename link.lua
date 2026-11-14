@@ -1,1 +1,1 @@
-https://paradise-indirect-difficulties-foreign.trycloudflare.com
+https://bear-information-harley-defined.trycloudflare.com
