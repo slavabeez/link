@@ -1,1 +1,1 @@
-https://seemed-tolerance-malpractice-mandatory.trycloudflare.com
+https://phantom-mods-intranet-presidential.trycloudflare.com
