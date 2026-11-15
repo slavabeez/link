@@ -1,1 +1,1 @@
-https://occurring-compiled-clinic-number.trycloudflare.com
+https://seemed-tolerance-malpractice-mandatory.trycloudflare.com
