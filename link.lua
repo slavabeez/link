@@ -1,1 +1,1 @@
-https://phantom-mods-intranet-presidential.trycloudflare.com
+https://api.trycloudflare.com
