@@ -1,1 +1,1 @@
-https://provisions-equal-calculator-steal.trycloudflare.com
+https://assessments-quest-ccd-hardly.trycloudflare.com
