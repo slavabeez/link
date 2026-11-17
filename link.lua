@@ -1,1 +1,1 @@
-https://totals-fans-jets-sized.trycloudflare.com
+https://locks-knives-down-journals.trycloudflare.com
