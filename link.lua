@@ -1,1 +1,1 @@
-https://api.trycloudflare.com
+https://circuit-sector-swing-org.trycloudflare.com
