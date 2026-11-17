@@ -1,1 +1,1 @@
-https://locks-knives-down-journals.trycloudflare.com
+https://api.trycloudflare.com
