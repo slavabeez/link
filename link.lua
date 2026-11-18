@@ -1,1 +1,1 @@
-https://medium-asset-rational-relationship.trycloudflare.com
+https://seen-reprint-frankfurt-temp.trycloudflare.com
