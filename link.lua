@@ -1,1 +1,1 @@
-https://advertise-authentication-close-professor.trycloudflare.com
+https://burton-magic-connecticut-submit.trycloudflare.com
