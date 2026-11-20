@@ -1,1 +1,1 @@
-https://projector-processor-glow-dealt.trycloudflare.com
+https://api.trycloudflare.com
