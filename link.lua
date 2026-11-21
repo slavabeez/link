@@ -1,1 +1,1 @@
-https://betty-citations-smoke-frost.trycloudflare.com
+https://api.trycloudflare.com
