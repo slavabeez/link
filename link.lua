@@ -1,1 +1,1 @@
-https://query-commonwealth-abraham-italic.trycloudflare.com
+https://nova-essentially-moderator-nam.trycloudflare.com
