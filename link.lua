@@ -1,1 +1,1 @@
-https://nova-essentially-moderator-nam.trycloudflare.com
+https://duo-pharmacies-walk-instrument.trycloudflare.com
