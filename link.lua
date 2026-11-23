@@ -1,1 +1,1 @@
-https://amber-area-territory-horizon.trycloudflare.com
+https://distinction-apart-pupils-snapshot.trycloudflare.com
