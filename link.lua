@@ -1,1 +1,1 @@
-https://not-canyon-compression-patterns.trycloudflare.com
+https://amber-area-territory-horizon.trycloudflare.com
