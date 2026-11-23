@@ -1,1 +1,1 @@
-https://distinction-apart-pupils-snapshot.trycloudflare.com
+https://graduation-solid-posted-producer.trycloudflare.com
