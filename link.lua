@@ -1,1 +1,1 @@
-https://addressed-roland-nowhere-flights.trycloudflare.com
+https://cet-atm-calculated-daily.trycloudflare.com
