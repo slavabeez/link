@@ -1,1 +1,1 @@
-https://cet-atm-calculated-daily.trycloudflare.com
+https://beneath-evening-yes-wiring.trycloudflare.com
