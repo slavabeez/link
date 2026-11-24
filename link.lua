@@ -1,1 +1,1 @@
-https://pour-measure-bracelet-bishop.trycloudflare.com
+https://lip-kinds-ear-wit.trycloudflare.com
