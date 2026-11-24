@@ -1,1 +1,1 @@
-https://caught-targets-wrestling-duo.trycloudflare.com
+https://joins-coordinate-literature-prevention.trycloudflare.com
