@@ -1,1 +1,1 @@
-https://bull-customize-honor-gap.trycloudflare.com
+https://api.trycloudflare.com
