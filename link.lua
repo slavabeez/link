@@ -1,1 +1,1 @@
-https://listing-valves-rights-alarm.trycloudflare.com
+https://fares-redeem-kansas-alerts.trycloudflare.com
