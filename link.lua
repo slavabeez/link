@@ -1,1 +1,1 @@
-https://fares-redeem-kansas-alerts.trycloudflare.com
+https://theology-uncle-jill-dozen.trycloudflare.com
