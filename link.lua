@@ -1,1 +1,1 @@
-https://removed-expects-footage-exhibitions.trycloudflare.com
+https://api.trycloudflare.com
