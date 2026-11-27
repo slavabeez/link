@@ -1,1 +1,1 @@
-https://api.trycloudflare.com
+https://suggest-research-helping-fans.trycloudflare.com
