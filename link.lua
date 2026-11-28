@@ -1,1 +1,1 @@
-https://explicitly-hop-rss-enormous.trycloudflare.com
+https://input-wishing-extending-amplifier.trycloudflare.com
